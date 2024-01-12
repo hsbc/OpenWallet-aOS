@@ -1,0 +1,71 @@
+import com.android.build.gradle.LibraryPlugin
+
+import static java.lang.System.getenv
+
+buildscript {
+    ext {
+        versionName = "0.0.1"
+        versionCode = 1
+        minSdk = 29
+        compileSdk = 32
+        targetSdk = 32
+
+        kotlinVersion = '1.5.21'
+        buildToolsVersion = '33.0.2'
+        gradleBuildToolsVersion = '7.1.2'
+        autoDependVersion = "1.0.7"
+
+        //jacocoVersion = "0.8.5"
+    }
+
+    ext.getProperty = { String propertyName, String environmentVariable ->
+        return project.hasProperty(propertyName) && !project.property(propertyName).isEmpty() ?
+                project.property(propertyName) : getenv(environmentVariable)
+    }
+
+    repositories {
+        maven {
+
+        }
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradleBuildToolsVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion"
+        //classpath "org.jacoco:org.jacoco.core:$jacocoVersion"
+        classpath "org.sonarqube:org.sonarqube.gradle.plugin:3.0"
+    }
+
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'com.google.guava:guava:r05'
+    }
+}
+
+subprojects {
+    plugins.withType(LibraryPlugin) {
+        android {
+            compileSdkVersion rootProject.ext.compileSdkVersion
+            defaultConfig {
+                minSdkVersion rootProject.ext.minSdkVersion
+                targetSdkVersion rootProject.ext.targetSdkVersion
+                versionCode 1
+                versionName cardAcquiringLibVersion
+                vectorDrawables.useSupportLibrary = true
+                multiDexEnabled true
+            }
+
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

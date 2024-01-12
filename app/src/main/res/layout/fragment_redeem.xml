@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <com.openwallet.view.CustomToolBar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/TextAppearance.DisplayEmphasized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14dp"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:text="@string/redeem_title"
+            android:textSize="@dimen/dimen_19sp" />
+
+        <TextView
+            style="@style/TextAppearance.Title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14dp"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:text="@string/redeem_nft_owner"
+            android:textSize="@dimen/dimen_14sp" />
+
+        <TextView
+            android:id="@+id/tvOwned"
+            style="@style/TextAppearance.Title2Emphasized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14dp"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            android:textSize="@dimen/dimen_16sp"
+            tools:text="Ahmad Muhannad" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:background="?attr/colorMobileDesignBackgroundStandard" />
+
+        <TextView
+            style="@style/TextAppearance.Title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14dp"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:text="@string/redeem_phone_number"
+            android:textSize="@dimen/dimen_14sp" />
+
+        <TextView
+            android:id="@+id/tvPhoneNumber"
+            style="@style/TextAppearance.Title2Emphasized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14dp"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            android:textSize="@dimen/dimen_16sp"
+            tools:text="+971 2626 0000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:background="?attr/colorMobileDesignBackgroundStandard" />
+
+
+        <TextView
+            style="@style/TextAppearance.Title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_14dp"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            android:layout_marginEnd="@dimen/dimen_14dp"
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/redeem_tips"
+            android:textSize="@dimen/dimen_14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <!--    **** Replace with your own UI component ****"-->
+            <!--            <PrimaryButton-->
+            <!--                android:id="@+id/btnSubmit"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginBottom="@dimen/dimen_16dp"-->
+            <!--                android:clickable="true"-->
+            <!--                android:focusable="true"-->
+            <!--                app:contentDescriptionLoading="@string/submit"-->
+            <!--                app:contentDescriptionSuccess="@string/submit"-->
+            <!--                app:state="enabled"-->
+            <!--                app:text="@string/submit" />-->
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

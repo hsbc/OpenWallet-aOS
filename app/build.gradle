@@ -1,0 +1,270 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+
+}
+import com.android.build.gradle.internal.tasks.FinalizeBundleTask
+
+android {
+
+    compileSdkVersion rootProject.ext.compileSdk
+
+    defaultConfig {
+        applicationId "com.openwallet"
+        minSdkVersion rootProject.ext.minSdk
+        targetSdkVersion rootProject.ext.targetSdk
+        versionCode generateVersionCode()
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        //just for uat package so not hide the jks.
+        //want hide the jks just save the info in the property file.
+        uatRelease {
+            storeFile file('')
+            storePassword ''
+            keyPassword ''
+            keyAlias ''
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            //debug also use uat sign config
+            signingConfig signingConfigs.uatRelease
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+        disable "ResourceType"
+        abortOnError false
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    flavorDimensions 'appType'
+    def uatVersionName = "${defaultConfig.versionName}_${getGitShortCmtId()}"
+    productFlavors {
+        uat {
+            dimension 'appType'
+            versionNameSuffix '.uat'
+            versionName uatVersionName
+            signingConfig signingConfigs.uatRelease
+        }
+        product {
+            //for google play unsigned package
+            dimension 'appType'
+        }
+    }
+
+    //for each build variant do something here
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+
+            def buildTypeName = variant.buildType.name
+            if (buildTypeName != 'release') {
+                //only handle the release version.
+                return
+            }
+            def taskSuffix = variant.name.capitalize()
+
+            def hasBuildTypeSign = (variant.buildType.signingConfig != null)
+            def flavorName = "" //flavor name
+            def versionName = defaultConfig.versionName
+            def signFlg = ""
+
+            // Get final bundle task name for this variant
+            def bundleFinalizeTaskName = "sign${taskSuffix}Bundle" //ex: signUatReleaseBundle
+            def assembleTaskName = "assemble${taskSuffix}" //ex: assembleUatRelease
+
+            variant.productFlavors.each { flavor ->
+                flavorName = flavor.name
+                if (flavor.versionName != null && !flavor.versionName.isEmpty()) {
+                    versionName = flavor.versionName
+                }
+                if (!hasBuildTypeSign && flavor.signingConfig == null) {
+                    signFlg = "unsigned_"
+                } else {
+                    signFlg = "appcenter_"
+                }
+                // println(flavor.name + " " + buildTypeName + " has buildType sign config:${hasBuildTypeSign}" + " has flavor sign config:" + (flavor.signingConfig != null))
+
+                //  println("bundleFinalizeTaskName:${bundleFinalizeTaskName}")
+            }
+
+            def targetDir = "${getProjectDir().getParentFile().getPath()}" + "/buildOutputs"
+            String buildEndTime = "${getDate()}"
+
+            File bundleFile = null // aab file
+            def bundleTask = "bundle${taskSuffix}" //ex : bundleUatRelease
+            //handle aab pack
+            tasks.named(bundleFinalizeTaskName, FinalizeBundleTask.class) {
+                bundleFile = finalBundleFile.asFile.get()
+//                println "bundle origin aab file ===> $bundleFile.path"
+            }
+
+            tasks.named(bundleTask) {
+                doLast {
+                    String aabFileName = "$signFlg${flavorName}_${buildTypeName}_${versionName}(${defaultConfig.versionCode})_${buildEndTime}.aab"
+//                    File aabDir = new File("${targetDir}/aab/${flavorName}")
+                    File aabDir = new File("${targetDir}/aab")
+                    if (aabDir.exists()) aabDir.deleteDir()
+                    aabDir.mkdirs()
+                    //println "bundle aab end =====> ${aabDir.path} $aabFileName"
+                    project.copy {
+                        from("${bundleFile}")
+                        into("${aabDir.path}")
+                        rename("${bundleFile.name}", "${aabFileName}")
+                    }
+                }
+            }
+
+            // println("assemble task name:${assembleTaskName}")
+            buildEndTime = "${getDate()}"
+            tasks.named(assembleTaskName) {
+                doLast {
+                    String apkFileName = "$signFlg${flavorName}_${buildTypeName}_${versionName}(${defaultConfig.versionCode})_${buildEndTime}.apk"
+                    File apkDir = new File("${targetDir}/apk/${flavorName}")
+//                    File apkDir = new File("${targetDir}/apk")
+                    if (apkDir.exists()) apkDir.deleteDir()
+                    apkDir.mkdirs()
+                    //println "assemble apk end =====>${apkDir.path} $apkFileName"
+                    project.copy {
+                        from("${output.outputFile}")
+                        into("${apkDir.path}")
+                        rename("${output.outputFileName}", "${apkFileName}")
+                    }
+                }
+            }
+
+//            def outputFile = output.outputFile
+//            if (outputFile != null && (outputFile.name.endsWith('.apk'))) {
+////                variant.getPackageApplication().outputDirectory = new File(targetDir)
+//                output.outputFileName = "${signFlg}${flavorName}-${buildType}-${flavorVersion}-${getDate()}.apk"
+//                 println("output.outputFileName:${output.outputFileName}")
+//            }
+
+        }
+    }
+}
+
+static def getGitShortCmtId() {
+    return 'git rev-parse --short HEAD'.execute().text.trim()
+}
+
+//获取时间戳
+static def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('MMdd_HHmm')
+    return formattedDate
+}
+
+
+def generateVersionCode() {
+    def versionCode = 53
+    try {
+        def file = file(System.getenv("VERSION_FILE"))
+        if (file.exists()) {
+            def currentVersionCode = file.text.toInteger()
+            if (currentVersionCode + 1 < versionCode) {
+                versionCode += 1
+            } else {
+                versionCode = currentVersionCode + 1
+            }
+        }
+    } catch (Exception e) {
+    }
+    return versionCode
+}
+
+dependencies {
+
+// Base
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    // Dagger
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$glideVersion"
+    implementation "com.github.bumptech.glide:annotations:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation "com.github.zjupure:webpdecoder:2.0.4.12.0"
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleRuntimeVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleRuntimeVersion"
+    implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation "com.kunminx.archi:unpeek-livedata:$unpeekLivedataVersion"
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rxjava2AdapterVersion"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$kotlinCoroutinesAdapterVersion"
+    // BottomNavigationView
+    implementation "com.github.ittianyu:BottomNavigationViewEx:$bottomNavigationViewExVersion"
+    implementation "androidx.cardview:cardview:$cardviewVersion"
+    implementation "com.drakeet.multitype:multitype:$multitypeVersion"
+    // AndroidVideoCache
+    implementation "com.danikula:videocache:2.7.1"
+
+    // MMKV
+    implementation "com.tencent:mmkv:$mmkvVersion"
+
+    //Junit
+    testImplementation 'junit:junit:4.13.2'
+    //Mockk
+    testImplementation 'io.mockk:mockk:1.12.4'
+    //
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.18.1'
+
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
+
+    testImplementation 'androidx.test:monitor:1.4.0'
+    testImplementation 'androidx.test.ext:junit-ktx:1.1.3'
+}
+
+apply from: '../jacoco.gradle'

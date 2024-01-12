@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorMobileDesignBackgroundHighlighted"
+    android:fitsSystemWindows="true">
+
+    <com.openwallet.view.CustomToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <MultiStepProgressBar-->
+    <!--        android:id="@+id/stepBar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:focusable="true"-->
+    <!--        android:background="?attr/colorMobileDesignBackgroundHighlighted"-->
+    <!--        android:padding="@dimen/mobile_design_space_12dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/toolbar"-->
+    <!--        app:multi_step_center_text=""-->
+    <!--        app:multi_step_completed="3"-->
+    <!--        app:multi_step_max="4" />-->
+
+    <TextView
+        android:id="@+id/tvEmailHint"
+        style="@style/TextAppearance.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/dimen_24dp"
+        android:layout_marginEnd="16dp"
+        android:focusable="true"
+        android:text="@string/edit_email_step2_hint"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stepBar"
+        tools:visibility="visible" />
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <StandardInputField-->
+    <!--        android:id="@+id/sifEmail"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/dimen_24dp"-->
+    <!--        android:inputType="textEmailAddress"-->
+    <!--        app:labelText="@string/register_step3_email_enter"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tvEmailHint" />-->
+
+    <TextView
+        android:id="@+id/tvRegistrationConsent"
+        style="@style/TextAppearance.Footnote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/register_step3_email_consent"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sifEmail"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvLoggedInEmailHint"
+        style="@style/TextAppearance.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/dimen_26dp"
+        android:layout_marginEnd="16dp"
+        android:focusable="true"
+        android:text="@string/reset_password_logged_in_email_hint"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stepBar"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvMaskedEmail"
+        style="@style/TextAppearance.BodyEmphasized"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/dimen_12dp"
+        android:layout_marginEnd="16dp"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoggedInEmailHint"
+        tools:visibility="visible" />
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <PrimaryButton-->
+    <!--        android:id="@+id/btnVerifyEmail"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="@dimen/dimen_16dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:state="disabled"-->
+    <!--        app:text="@string/register_step3_email_verify" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

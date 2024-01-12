@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvBody"
+        style="@style/TextAppearance.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_11dp"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:lineSpacingMultiplier="1.3"
+        tools:text="NFTs – or Non-fungible Tokens – are unique digital assets stored on the blockchain. They are designed to be unique to you and cannot be exchanged for another equivalent; unlike crypto-assets like Bitcoin or Central Bank Digital Currencies.  " />
+
+
+</LinearLayout>

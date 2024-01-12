@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorMobileDesignBackgroundHighlighted"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/llLogin_Welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.openwallet.view.CustomToolBar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/tvAdTitle"
+            style="@style/TextAppearance.DisplayEmphasized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:text="@string/login_home_title" />
+
+        <TextView
+            android:id="@+id/tvAdContent"
+            style="@style/TextAppearance.Title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:text="@string/login_home_content" />
+
+        <!--    **** Replace with your own UI component ****"-->
+        <!--        <StandardInputField-->
+        <!--            android:id="@+id/sifUserName"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/dimen_32dp"-->
+        <!--            android:inputType="text"-->
+        <!--            android:visibility="visible"-->
+        <!--            app:enabled="true"-->
+        <!--            app:labelText="@string/register_step2_password_enter" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:orientation="horizontal">
+
+
+            <!--    **** Replace with your own UI component ****"-->
+            <!--            <CheckBox-->
+            <!--                android:id="@+id/cb_remember"-->
+            <!--                style="@style/Widget.AppCompat.CompoundButton.RadioButton"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:checked="false"-->
+            <!--                app:enabled="true"-->
+            <!--                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginEnd="@dimen/dimen_16dp"
+                android:text="@string/remember_me" />
+
+        </LinearLayout>
+
+        <!--    **** Replace with your own UI component ****"-->
+        <!--        <PrimaryButton-->
+        <!--            android:id="@+id/btnLogin_Next"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/dimen_32dp"-->
+        <!--            app:state="disabled"-->
+        <!--            app:text="@string/next" />-->
+
+        <TextView
+            android:id="@+id/tvForgetUsername"
+            style="@style/TextAppearance.BodyEmphasized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_28dp"
+            android:gravity="center"
+            android:text="@string/login_username_forget" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvCensent"
+        style="@style/TextAppearance.Footnote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_42dp"
+        android:gravity="center_horizontal"
+        android:text="@string/login_consent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

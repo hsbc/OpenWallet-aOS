@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutContent"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.openwallet.view.CustomToolBar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/TextAppearance.Title2Emphasized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:paddingStart="@dimen/dimen_16dp"
+            android:paddingEnd="@dimen/dimen_16dp"
+            android:text="Do you wish to delete your  Open profile?" />
+
+        <TextView
+            style="@style/TextAppearance.BodyLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:lineSpacingMultiplier="1.3"
+            android:paddingStart="@dimen/dimen_16dp"
+            android:paddingEnd="@dimen/dimen_16dp"
+            android:text="If so, you will no longer have access to this  Open profile nor be allowed to register a new profile with the email address and mobile phone number connected to your bank account.
+ \n\nThere is a processing time and  Open will continue hosting your account data until the completion of the delete profile procedure, due to the  customer service policy." />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!--    **** Replace with your own UI component ****"-->
+    <!--        <PrimaryButton-->
+    <!--            android:id="@+id/btnDelete"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:state="enabled"-->
+    <!--            app:text="Delete my profile"-->
+    <!--            tools:visibility="visible" />-->
+
+        <!--    **** Replace with your own UI component ****"-->
+    <!--        <SecondaryButton-->
+    <!--            android:id="@+id/btnCancel"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginBottom="@dimen/dimen_16dp"-->
+    <!--            android:clickable="true"-->
+    <!--            android:focusable="true"-->
+    <!--            app:text="Cancel"-->
+    <!--            tools:ignore="DuplicateClickableBoundsCheck"-->
+    <!--            tools:visibility="visible" />-->
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

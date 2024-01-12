@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@color/color_divider"
+        android:width="@dimen/dimen_100dp"
+        android:height="@dimen/dimen_100dp" />
+    <item
+        android:width="@dimen/dimen_10dp"
+        android:height="@dimen/dimen_10dp"
+        android:drawable="@drawable/ic_status_error_on_dark_hase"
+        android:gravity="center" />
+</layer-list>

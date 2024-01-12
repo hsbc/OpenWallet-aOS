@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mobile_design_wpb_light_pearl">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/dimen_123dp"
+        android:layout_height="@dimen/dimen_125dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="@dimen/dimen_9dp"
+        android:layout_marginEnd="9dp" />
+
+    <View
+        android:id="@+id/bgSelect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/color_image_selected" />
+
+
+    <TextView
+        android:id="@+id/tvSelected"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_20dp"
+        android:layout_gravity="center|bottom"
+        android:background="@color/color_text_selected"
+        android:gravity="center"
+        android:text="@string/edit_avatar_selected"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_12sp" />
+</FrameLayout>

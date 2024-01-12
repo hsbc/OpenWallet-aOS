@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <action android:id="@+id/action_global_mainFragment"
+        app:destination="@id/mainFragment"/>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.openwallet.ui.activity.fragment.MainFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_MainFragment_to_HomeDetailFragment"
+            app:destination="@id/homeDetailFragment">
+
+            <argument
+                android:name="index"
+                app:argType="integer" />
+
+        </action>
+
+        <action
+            android:id="@+id/action_MainFragment_to_WallDetailFragment"
+            app:destination="@id/walletDetailFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_WelcomeFragment"
+            app:destination="@id/welcomeFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_profileAvatarFragment"
+            app:destination="@id/profileAvatarFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_securityDigitalIdentityFragment"
+            app:destination="@+id/securityDigitalIdentityFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_notificationFragment"
+            app:destination="@+id/notificationFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_helpCenterFragment"
+            app:destination="@+id/helpCenterFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_termsAndConditionsProfileFragment"
+            app:destination="@+id/termsAndConditionsProfileFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_faqFragment"
+            app:destination="@+id/faqFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_changePasswordFragment"
+            app:destination="@+id/changePasswordEnterPassword" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_deleteProfileFragment"
+            app:destination="@+id/deleteProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.openwallet.ui.activity.fragment.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+
+    <fragment
+        android:id="@+id/profileMainFragment"
+        android:name="com.openwallet.ui.activity.fragment.profile.ProfileMainFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile_main" />
+
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.openwallet.ui.activity.fragment.wallet.WalletFragment"
+        android:label="Wallet"
+        tools:layout="@layout/fragment_wallet" />
+
+    <fragment
+        android:id="@+id/profileAvatarFragment"
+        android:name="com.openwallet.ui.activity.fragment.profile.changeavater.ProfileAvatarFragment"
+        android:label="profileAvatar"
+        tools:layout="@layout/fragment_profile_avatar" />
+
+
+    //2nd
+    <fragment
+        android:id="@+id/homeDetailFragment"
+        android:name="com.openwallet.ui.activity.fragment.homedetail.HomeDetailFragment"
+        android:label="Home Detail"
+        tools:layout="@layout/fragment_home_detail" />
+
+    <fragment
+        android:id="@+id/termsAndConditionsProfileFragment"
+        android:name="com.openwallet.ui.activity.fragment.profile.TermsAndConditionsProfileFragment"
+        android:label="Home Detail"
+        tools:layout="@layout/fragment_terms_and_conditions_profile" />
+
+
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="com.openwallet.ui.activity.fragment.profile.faq.FaqFragment"
+        android:label="Home Detail"
+        tools:layout="@layout/fragment_faq" />
+
+
+    <fragment
+        android:id="@+id/walletDetailFragment"
+        android:name="com.openwallet.ui.activity.fragment.wallet.detail.WalletDetailFragment"
+        android:label="Wallet Detail"
+        tools:layout="@layout/fragment_wallet_detail">
+
+        <action
+            android:id="@+id/action_WallDetailFragment_to_ProductDetailFragment"
+            app:destination="@id/productDetailFragment" />
+
+        <action
+            android:id="@+id/action_wallDetailFragment_to_redeemFragment"
+            app:destination="@id/redeemFragment" />
+
+        <action
+            android:id="@+id/action_wallDetailFragment_to_detailBackgroundFragment"
+            app:destination="@id/detailBackgroundFragment" />
+
+        <action
+            android:id="@+id/action_wallDetailFragment_to_detailDeliveryFragment"
+            app:destination="@id/detailDeliveryFragment" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.openwallet.ui.activity.fragment.welcome.WelcomeFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome">
+
+        <action
+            android:id="@+id/action_WelcomeFragment_to_StartRegisterFragment"
+            app:destination="@id/startRegisterFragment" />
+
+        <action
+            android:id="@+id/action_WelcomeFragment_to_LoginPasswordFragment"
+            app:destination="@id/loginPasswordFragment" />
+
+        <action
+            android:id="@+id/action_WelcomeFragment_to_LoginStartFragment"
+            app:destination="@id/loginStartFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/securityDigitalIdentityFragment"
+        android:name="com.openwallet.ui.activity.fragment.profile.securitydigitalidentity.SecurityDigitalIdentityFragment"
+        android:label="Security Digital"
+        tools:layout="@layout/fragment_security_digital_identity" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.openwallet.ui.activity.fragment.profile.notification.NotificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/helpCenterFragment"
+        android:name="com.openwallet.ui.activity.fragment.profile.helpcenter.HelpCenterFragment"
+        android:label="Help Center"
+        tools:layout="@layout/fragment_help_center" />
+
+
+    //3rd
+    //redeem start
+    <fragment
+        android:id="@+id/redeemFragment"
+        android:name="com.openwallet.ui.activity.fragment.redeem.RedeemFragment"
+        android:label="@string/redeem"
+        tools:layout="@layout/fragment_redeem">
+
+        <action
+            android:id="@+id/action_redeemFragment_to_successRedeemFragment"
+            app:destination="@id/successRedeemFragment" />
+        <action
+
+            android:id="@+id/action_redeemFragment_to_TermsAndConditionsProfileFragment"
+            app:destination="@id/termsAndConditionsProfileFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/successRedeemFragment"
+        android:name="com.openwallet.ui.activity.fragment.wallet.detail.WalletSuccessRedeemFragment"
+        android:label="Success Redeem"
+        tools:layout="@layout/fragment_wallet_success_redeem">
+
+        <action
+            android:id="@+id/action_successRedeemFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+    </fragment>
+
+    //redeem end
+
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.openwallet.ui.activity.fragment.product.ProductDetailFragment"
+        android:label="Product Details"
+        tools:layout="@layout/fragment_product_details" />
+
+    <fragment
+        android:id="@+id/detailBackgroundFragment"
+        android:name="com.openwallet.ui.activity.fragment.wallet.detail.WalletDetailBackgroundFragment"
+        android:label="Product Details"
+        tools:layout="@layout/fragment_wallet_detail_background" />
+
+    <fragment
+        android:id="@+id/detailDeliveryFragment"
+        android:name="com.openwallet.ui.activity.fragment.wallet.detail.WalletDetailDeliveryFragment"
+        android:label="Product Details"
+        tools:layout="@layout/fragment_wallet_detail_delivery">
+
+        <action
+            android:id="@+id/action_WalletDetailDeliveryFragment_to_HelpCenterFragment"
+            app:destination="@id/helpCenterFragment" />
+    </fragment>
+
+    //registration start
+    <fragment
+        android:id="@+id/startRegisterFragment"
+        android:name="com.openwallet.ui.activity.fragment.startregister.StartRegisterFragment"
+        android:label="StartRegister"
+        tools:layout="@layout/fragment_register_start">
+
+        <action
+            android:id="@+id/action_StartRegisterFragment_to_RegisterNameFragment"
+            app:destination="@id/registerName" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerConsent"
+        android:name="com.openwallet.ui.activity.fragment.register.RegisterConsentFragment"
+        android:label="RegisterConsent"
+        tools:layout="@layout/fragment_terms_and_conditions">
+
+        <action
+            android:id="@+id/action_RegisterConsentFragment_to_StatusFragment"
+            app:destination="@id/status" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerName"
+        android:name="com.openwallet.ui.activity.fragment.register.RegisterNameFragment"
+        android:label="RegisterName"
+        tools:layout="@layout/fragment_register_name">
+
+        <action
+            android:id="@+id/action_RegisterNameFragment_to_RegisterPasswordFragment"
+            app:destination="@id/registerPassword" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerPassword"
+        android:name="com.openwallet.ui.activity.fragment.register.RegisterPasswordFragment"
+        android:label="RegisterPassword"
+        tools:layout="@layout/fragment_register_password">
+
+        <action
+            android:id="@+id/action_RegisterPasswordFragment_to_RegisterEmailFragment"
+            app:destination="@id/registerEmail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerEmail"
+        android:name="com.openwallet.ui.activity.fragment.register.RegisterEmailFragment"
+        android:label="RegisterEmail"
+        tools:layout="@layout/fragment_register_email">
+
+        <action
+            android:id="@+id/action_RegisterEmailFragment_to_RegisterEmailSmsFragment"
+            app:destination="@id/registerEmailSms" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerEmailSms"
+        android:name="com.openwallet.ui.activity.fragment.register.RegisterEmailSmsFragment"
+        android:label="RegisterEmail"
+        tools:layout="@layout/fragment_sms">
+
+        <action
+            android:id="@+id/action_RegisterEmailSmsFragment_to_RegisterPhoneFragment"
+            app:destination="@id/registerPhone" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerPhone"
+        android:name="com.openwallet.ui.activity.fragment.register.RegisterPhoneFragment"
+        android:label="RegisterEmail"
+        tools:layout="@layout/fragment_register_email">
+
+        <action
+            android:id="@+id/action_RegisterPhoneFragment_to_RegisterPhoneSmsFragment"
+            app:destination="@id/registerPhoneSms" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerPhoneSms"
+        android:name="com.openwallet.ui.activity.fragment.register.RegisterPhoneSmsFragment"
+        android:label="RegisterEmail"
+        tools:layout="@layout/fragment_sms">
+
+        <action
+            android:id="@+id/action_RegisterPhoneSmsFragment_to_RegisterConsent"
+            app:destination="@id/registerConsent" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/status"
+        android:name="com.openwallet.ui.activity.fragment.status.StatusFragment"
+        android:label="Status"
+        tools:layout="@layout/fragment_status">
+
+        <action
+            android:id="@+id/action_StatusFragment_to_WelcomeFragment"
+            app:destination="@id/registerPhone" />
+
+        <action
+            android:id="@+id/action_StatusFragment_to_LoginStartFragment"
+            app:destination="@id/loginStartFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/loginStartFragment"
+        android:name="com.openwallet.ui.activity.fragment.login.LoginStartFragment"
+        android:label="LoginStartFragment"
+        tools:layout="@layout/fragment_login_home">
+
+        <action
+            android:id="@+id/action_LoginStartFragment_to_WelcomeFragment"
+            app:destination="@+id/welcomeFragment" />
+
+        <action
+            android:id="@+id/action_LoginStartFragment_to_LoginPasswordFragment"
+            app:destination="@id/loginPasswordFragment" />
+
+        <action
+            android:id="@+id/action_LoginStartFragment_to_FindUsernameEmailFragment"
+            app:destination="@id/findUsernameEmail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginPasswordFragment"
+        android:name="com.openwallet.ui.activity.fragment.login.LoginPasswordFragment"
+        android:label="LoginPasswordFragment"
+        tools:layout="@layout/fragment_login_password">
+
+        <action
+            android:id="@+id/action_LoginPasswordFragment_to_LoginMethodFragment"
+            app:destination="@id/loginMethodFragment" />
+
+        <action
+            android:id="@+id/action_LoginPasswordFragment_to_ResetPasswordEmailFragment"
+            app:destination="@id/resetPasswordEmail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginMethodFragment"
+        android:name="com.openwallet.ui.activity.fragment.login.LoginMethodFragment"
+        android:label="LoginMethodFragment"
+        tools:layout="@layout/fragment_login_home">
+
+        <action
+            android:id="@+id/action_LoginMethodFragment_to_LoginEmailSmsFragment"
+            app:destination="@id/loginEmailSms" />
+
+        <action
+            android:id="@+id/action_LoginMethodFragment_to_LoginPhoneSmsFragment"
+            app:destination="@id/loginPhoneSms" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginEmailSms"
+        android:name="com.openwallet.ui.activity.fragment.login.LoginEmailSmsFragment"
+        android:label="LoginEmailSmsFragment"
+        tools:layout="@layout/fragment_sms">
+
+        <action
+            android:id="@+id/action_LoginEmailSmsFragment_to_MainFragment"
+            app:destination="@id/mainFragment" />
+
+        <action
+            android:id="@+id/action_LoginEmailSmsFragment_to_StatusFragment"
+            app:destination="@id/status" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginPhoneSms"
+        android:name="com.openwallet.ui.activity.fragment.login.LoginPhoneSmsFragment"
+        android:label="LoginPhoneSmsFragment"
+        tools:layout="@layout/fragment_sms">
+
+        <action
+            android:id="@+id/action_LoginPhoneSmsFragment_to_MainFragment"
+            app:destination="@id/mainFragment" />
+
+        <action
+            android:id="@+id/action_LoginPhoneSmsFragment_to_StatusFragment"
+            app:destination="@id/status" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordEmail"
+        android:name="com.openwallet.ui.activity.fragment.resetpassword.ResetPasswordEmailFragment"
+        android:label="ResetPasswordEmailFragment"
+        tools:layout="@layout/fragment_register_email">
+
+        <action
+            android:id="@+id/action_ResetPasswordEmailFragment_to_resetPasswordEmailSms"
+            app:destination="@id/resetPasswordEmailSms" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordEmailSms"
+        android:name="com.openwallet.ui.activity.fragment.resetpassword.ResetPasswordEmailSmsFragment"
+        android:label="ResetPasswordEmailSmsFragment"
+        tools:layout="@layout/fragment_sms">
+
+        <action
+            android:id="@+id/action_ResetPasswordEmailSmsFragment_to_resetPasswordPhoneFragment"
+            app:destination="@id/resetPasswordPhone" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordPhone"
+        android:name="com.openwallet.ui.activity.fragment.resetpassword.ResetPasswordPhoneFragment"
+        android:label="ResetPasswordPhoneFragment"
+        tools:layout="@layout/fragment_register_phone">
+
+        <action
+            android:id="@+id/action_ResetPasswordPhoneFragment_to_ResetPasswordPhoneSmsFragment"
+            app:destination="@id/resetPasswordPhoneSms" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordPhoneSms"
+        android:name="com.openwallet.ui.activity.fragment.resetpassword.ResetPasswordPhoneSmsFragment"
+        android:label="ResetPasswordPhoneSmsFragment"
+        tools:layout="@layout/fragment_sms">
+
+        <action
+            android:id="@+id/action_ResetPasswordPhoneSmsFragment_to_ComfirmationFragment"
+            app:destination="@id/resetPasswordComfirmation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordComfirmation"
+        android:name="com.openwallet.ui.activity.fragment.resetpassword.ResetPasswordConfirmationFragment"
+        android:label="ResetPasswordComfirmationFragment"
+        tools:layout="@layout/fragment_register_password">
+
+        <action
+            android:id="@+id/action_ResetPasswordComfirmationFragment_to_StatusFragment"
+            app:destination="@id/status" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/findUsernameEmail"
+        android:name="com.openwallet.ui.activity.fragment.findusername.FindUsernameEmailFragment"
+        android:label="FindUsernameEmailFragment"
+        tools:layout="@layout/fragment_register_email">
+
+        <action
+            android:id="@+id/action_FindUsernameEmailFragment_to_FindUsernameEmailSmsFragment"
+            app:destination="@id/findUsernameEmailSms" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/findUsernameEmailSms"
+        android:name="com.openwallet.ui.activity.fragment.findusername.FindUsernameEmailSmsFragment"
+        android:label="FindUsernameEmailFragment"
+        tools:layout="@layout/fragment_sms">
+
+        <action
+            android:id="@+id/action_FindUsernameEmailSmsFragment_to_FindUsernamePhoneFragment"
+            app:destination="@id/findUsernamePhone" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/findUsernamePhone"
+        android:name="com.openwallet.ui.activity.fragment.findusername.FindUsernamePhoneFragment"
+        android:label="FindUsernameEmailFragment"
+        tools:layout="@layout/fragment_register_phone">
+
+        <action
+            android:id="@+id/action_FindUsernamePhoneFragment_to_FindUsernamePhoneSmsFragment"
+            app:destination="@id/findUsernamepPhoneSms" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/findUsernamepPhoneSms"
+        android:name="com.openwallet.ui.activity.fragment.findusername.FindUsernamePhoneSmsFragment"
+        android:label="FindUsernameEmailFragment"
+        tools:layout="@layout/fragment_sms">
+
+        <action
+            android:id="@+id/action_FindUsernamePhoneSmsFragment_to_StatusFragment"
+            app:destination="@id/status" />
+    </fragment>
+
+    //todoc
+    <fragment
+        android:id="@+id/changePasswordEnterPassword"
+        android:name="com.openwallet.ui.activity.fragment.profile.changepassword.EnterCurrentPasswordFragment"
+        android:label="ChangePasswordEnterPassword"
+        tools:layout="@layout/fragment_changepassword_enter_password">
+
+        <action
+            android:id="@+id/action_EnterCurrentPasswordFragment_to_ChangePasswordMethodFragment"
+            app:destination="@id/changePasswordVerifyMethod" />
+
+        <action
+            android:id="@+id/action_EnterCurrentPasswordFragment_to_ResetPasswordEmailFragment"
+            app:destination="@id/resetPasswordEmail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/changePasswordVerifyMethod"
+        android:name="com.openwallet.ui.activity.fragment.profile.changepassword.ChangePasswordMethodFragment"
+        android:label="ChangePasswordMethodFragment"
+        tools:layout="@layout/fragment_changepassword_verify_method">
+
+        <action
+            android:id="@+id/action_ChangePasswordMethodFragment_to_ChangePassWordEmailSmsFragment"
+            app:destination="@id/changePasswordEmailSms" />
+
+        <action
+            android:id="@+id/action_ChangePasswordMethodFragment_to_ChangePasswordPhoneSmsFragment"
+            app:destination="@id/changePasswordPhoneSms" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/changePasswordEmailSms"
+        android:name="com.openwallet.ui.activity.fragment.profile.changepassword.ChangePassWordEmailSmsFragment"
+        android:label="ChangePassWordEmailSmsFragment"
+        tools:layout="@layout/fragment_sms">
+
+        <action
+            android:id="@+id/action_ChangePassWordEmailSmsFragment_to_ChangePasswordConfirmationFragment"
+            app:destination="@id/changePasswordConfirmation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/changePasswordPhoneSms"
+        android:name="com.openwallet.ui.activity.fragment.profile.changepassword.ChangePasswordPhoneSmsFragment"
+        android:label="ChangePasswordPhoneSmsFragment"
+        tools:layout="@layout/fragment_sms">
+
+        <action
+            android:id="@+id/action_ChangePasswordPhoneSmsFragment_to_ChangePasswordConfirmationFragment"
+            app:destination="@id/changePasswordConfirmation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/changePasswordConfirmation"
+        android:name="com.openwallet.ui.activity.fragment.profile.changepassword.ChangePasswordConfirmationFragment"
+        android:label="ChangePasswordConfirmationFragment"
+        tools:layout="@layout/fragment_register_password">
+
+        <action
+            android:id="@+id/action_ChangePasswordConfirmationFragment_to_StatusFragment"
+            app:destination="@id/status" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deleteProfileFragment"
+        android:name="com.openwallet.ui.activity.fragment.profile.deleteprofile.DeleteProfileFragment"
+        android:label="DeleteProfileFragment"
+        tools:layout="@layout/fragment_delete_profile">
+
+    <action
+        android:id="@+id/action_deleteProfileFragment_to_StatusFragment"
+        app:destination="@id/status" />
+
+    </fragment>
+
+</navigation>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.activity.fragment.profile.helpcenter.HelpCenterFragment">
+
+    <com.openwallet.view.CustomToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/dimen_121dp"
+        android:background="#FFFFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/submitButton"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/TextAppearance.CaptionEmphasized"
+            android:layout_width="343dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:text="Contact Us" />
+
+
+        <TextView
+            style="@style/TextAppearance_Body_Expandable"
+            android:layout_width="342dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Have a question? A suggestion? Or would like to share any comments, about our App or service? You can write them here. " />
+
+        <TextView
+            style="@style/CustomPopUp.NoDefaultMarginOnCta"
+            android:layout_width="343dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="21dp"
+            android:text="We appreciate your feedback." />
+
+        <EditText
+            android:id="@+id/input"
+            style="@style/TextAppearance.DisplayInputField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/dimen_10dp"
+            android:paddingBottom="@dimen/dimen_10dp"
+            android:paddingStart="@dimen/dimen_12dp"
+            android:paddingEnd="@dimen/dimen_12dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/bg_border"
+            android:gravity="left|top"
+            android:hint="Your feedback"
+            android:textSize="@dimen/mobile_design_wpb_icon_message_text_size">
+
+        </EditText>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="right"
+        android:text="0/2000"
+        android:textColor="@color/black"
+        android:textSize="@dimen/mobile_design_hase_text_footnote"
+        app:layout_constraintTop_toBottomOf="@+id/linear" />
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <PrimaryButton-->
+    <!--        android:id="@+id/submitButton"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/cancelButton"-->
+    <!--        app:text="Submit" />-->
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <SecondaryButton-->
+    <!--        android:id="@+id/cancelButton"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:text="Cancel" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,71 @@
+apply plugin: 'jacoco'
+
+/**
+ * The correct path of the report is $rootProjectDir/app/build/reports/jacoco/index.html
+ * to run this task use: ./gradlew clean jacocoTestReport
+ */
+
+jacoco{
+    toolVersion = "0.8.5"
+}
+
+def mainSrc = "${project.projectDir}/src/main/java"
+def fileFilter = [
+        '**/*Activity.*',
+        '**/*Fragment.*',
+        '**/*Test*.*',
+        '**/AutoValue_*.*',
+        '**/*JavascriptBridge.class',
+        '**/R.class',
+        '**/R$*.class',
+        '**/Manifest*.*',
+        'android/**/*.*',
+        '**/BuildConfig.*',
+        '**/*$ViewBinder*.*',
+        '**/*$ViewInjector*.*',
+        '**/Lambda$*.class',
+        '**/Lambda.class',
+        '**/*Lambda.class',
+        '**/*Lambda*.class',
+        '**/*$InjectAdapter.class',
+        '**/*$ModuleAdapter.class',
+        '**/*$ViewInjector*.class',
+        '**/*_MembersInjector.class', //Dagger2 generated code
+        '*/*_MembersInjector*.*', //Dagger2 generated code
+        '**/*_*Factory*.*', //Dagger2 generated code
+        '*/*Component*.*', //Dagger2 generated code
+        '**/*Module*.*', //Dagger2 generated code
+        '**/com/openwallet/view/*',
+        '**/com/openwallet/di/*',
+        '**/com/openwallet/base/*',
+        '**/com/openwallet/base/adapter/*',
+]
+def javaDebugTree = fileTree(dir: "${buildDir}/intermediates/javac/debug/classes", excludes: fileFilter)
+def kotlinDebugTree = fileTree(dir: "${buildDir}/tmp/kotlin-classes/debug", excludes: fileFilter)
+
+task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest','createDebugCoverageReport']) {
+    group = "Reporting"
+    description = "Generate Jacoco reports after running tests"
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+
+    sourceDirectories.setFrom(files([mainSrc]))
+    classDirectories.setFrom(files([javaDebugTree, kotlinDebugTree]))
+    executionData.setFrom(files("$buildDir/outputs/code-coverage/connected/*coverage.ec"))
+    doFirst {
+        new File("$buildDir/intermediates/javac/debug/classes/".eachFileRecure{ file ->
+            if (file.name.contains('$$')){
+                file.renameTo(file.path.replace('$$','$'))
+            }
+        })
+        new File("$buildDir/tmp/kotlin-classes/debug/".eachFileRecure{ file ->
+            if (file.name.contains('$$')){
+                file.renameTo(file.path.replace('$$','$'))
+            }
+        })
+
+    }
+}
+

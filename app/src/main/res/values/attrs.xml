@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StepsView">
+        <attr name="numOfSteps" format="integer" />
+        <attr name="completePosition" format="integer" />
+        <attr name="labels" format="reference" />
+        <attr name="barColor" format="reference" />
+        <attr name="progressColor" format="reference" />
+        <attr name="labelColor" format="reference" />
+        <attr name="progressTextColor" format="reference" />
+        <attr name="hideProgressText" format="boolean" />
+        <attr name="labelSize" format="float" />
+        <attr name="progressMargin" format="float" />
+        <attr name="vsCircleRadius" format="float" />
+        <attr name="progressStrokeWidth" format="float" />
+    </declare-styleable>
+
+    <!-- StateLayout -->
+    <declare-styleable name="StateLayout">
+        <attr name="sl_loadingLayoutId" format="reference" />
+        <attr name="sl_emptyLayoutId" format="reference" />
+        <attr name="sl_errorLayoutId" format="reference" />
+        <attr name="sl_emptyText" format="string" />
+        <attr name="sl_emptyIcon" format="reference" />
+        <attr name="sl_useContentBgWhenLoading" format="boolean" />
+        <attr name="sl_enableLoadingShadow" format="boolean" />
+        <attr name="sl_enableTouchWhenLoading" format="boolean" />
+        <attr name="sl_defaultShowLoading" format="boolean" />
+        <attr name="sl_noEmptyAndError" format="boolean" />
+        <attr name="sl_showLoadingOnce" format="boolean" />
+        <attr name="sl_animDuration" format="integer" />
+    </declare-styleable>
+
+</resources>

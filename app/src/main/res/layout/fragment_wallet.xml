@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_header_bg"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_254dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/home_header_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_notification_bg"
+            android:layout_width="@dimen/dimen_44dp"
+            android:layout_height="@dimen/dimen_44dp"
+            android:layout_marginTop="@dimen/mobile_design_space_36dp"
+            android:layout_marginEnd="@dimen/dimen_15dp"
+            android:src="@drawable/icon_notification"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:mdl_dotVisibility="false" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextAppearance.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_80dp"
+            android:text="@string/wallet_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_33sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_33dp"
+            android:layout_marginEnd="@dimen/dimen_15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            card_view:cardElevation="1dp"
+            card_view:cardUseCompatPadding="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dimen_12dp">
+
+
+                <!-- ntf mp4 container -->
+                <com.openwallet.ui.activity.fragment.wallet.detail.views.WalletNftVideoView
+                    android:id="@+id/fl_nft"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_240dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_nft"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_240dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icon_wallet_nft_front"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                <TextView
+                    android:id="@+id/tvNftTitle"
+                    style="@style/TextAppearance.Title2Emphasized"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_18dp"
+                    android:layout_marginTop="@dimen/dimen_17dp"
+                    android:layout_marginEnd="30dp"
+                    android:text=" Gold Key sdfsf sdfs fsd fsd fdsf sdfs fds "
+                    android:textSize="@dimen/dimen_16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fl_nft"
+                    card_view:layout_constraintEnd_toStartOf="@id/tvRedeem"
+                    card_view:layout_constraintHorizontal_chainStyle="spread_inside" />
+
+                <TextView
+                    android:id="@+id/tvNftSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_3dp"
+                    android:text="2022 Limited EDition"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/tvNftTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvNftTitle" />
+
+                <TextView
+                    android:id="@+id/tvOwned"
+                    style="@style/TextAppearance.Title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_3dp"
+                    android:text="Owned by: username"
+                    android:textSize="@dimen/dimen_14sp"
+                    app:layout_constraintStart_toStartOf="@id/tvNftTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvNftSubTitle" />
+
+                <TextView
+                    android:id="@+id/tvRedeemedDate"
+                    style="@style/TextAppearance.Title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_3dp"
+                    android:textSize="@dimen/dimen_14sp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/tvNftTitle"
+                    card_view:layout_constraintTop_toBottomOf="@id/tvOwned"
+                    tools:text="Redeemed on Sep15.2022"
+                    tools:visibility="visible" />
+
+                <!--    **** Replace with your own UI component ****"-->
+                <!--        <StatusIndicator-->
+                <!--            android:id="@+id/indicatorRedeem"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:layout_marginEnd="@dimen/dimen_16dp"-->
+                <!--            app:layout_constraintBottom_toBottomOf="@id/tvNftTitle"-->
+                <!--            app:layout_constraintEnd_toEndOf="parent"-->
+                <!--            app:layout_constraintTop_toTopOf="@id/tvNftTitle" />-->
+
+                <TextView
+                    android:id="@+id/tvRedeem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dimen_8dp"
+                    android:text="Redeemed"
+                    app:layout_constraintBottom_toBottomOf="@id/tvNftTitle"
+                    app:layout_constraintEnd_toStartOf="@id/indicatorRedeem"
+                    app:layout_constraintStart_toEndOf="@id/tvNftTitle"
+                    app:layout_constraintTop_toTopOf="@id/tvNftTitle" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</widgets.atomic.PullToRefreshLayout>

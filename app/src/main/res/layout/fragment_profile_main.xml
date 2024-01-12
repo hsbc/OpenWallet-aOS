@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.fragment.profile.ProfileMainFragment">
+
+    <ImageView
+        android:id="@+id/iv_header_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_181dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/home_header_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_notification_bg"
+        android:layout_width="@dimen/dimen_44dp"
+        android:layout_height="@dimen/dimen_44dp"
+        android:layout_marginTop="@dimen/mobile_design_space_36dp"
+        android:layout_marginEnd="@dimen/dimen_15dp"
+        android:src="@drawable/icon_notification"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/TextAppearance.DisplayEmphasized"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_83dp"
+        android:text="Me"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_33sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_76dp"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginBottom="-38dp"
+        android:background="#FFFFFFFF"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/iv_header_bg">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/userHead"
+            android:layout_width="@dimen/dimen_44dp"
+            android:layout_height="@dimen/dimen_44dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_avatar_default"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userName"
+            style="@style/TextAppearance.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/mobile_design_space_12dp"
+            android:layout_marginEnd="@dimen/mobile_design_space_8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/endIconImageView"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name" />
+
+    </LinearLayout>
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <IconValueListItemView-->
+    <!--        android:id="@+id/securityDigitalIdentity"-->
+    <!--        style="@style/IconValueListItemView.LaunchPoint"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        app:endIcon="?attr/icon_chevron_right"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/linearLayout"-->
+    <!--        app:startIcon="?attr/icon_security_digital_identity"-->
+    <!--        app:titleText="Security Digital Identity" />-->
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <IconValueListItemView-->
+    <!--        android:id="@+id/notification"-->
+    <!--        style="@style/IconValueListItemView.LaunchPoint"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:endIcon="?attr/icon_chevron_right"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/securityDigitalIdentity"-->
+    <!--        app:startIcon="?attr/icon_alert"-->
+    <!--        app:titleText="Notification"-->
+    <!--        tools:layout_editor_absoluteX="-16dp" />-->
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <IconValueListItemView-->
+    <!--        android:id="@+id/password"-->
+    <!--        style="@style/IconValueListItemView.LaunchPoint"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:endIcon="?attr/icon_chevron_right"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/notification"-->
+    <!--        app:startIcon="?attr/icon_security_password"-->
+    <!--        app:titleText="Password" />-->
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_4dp"
+        android:background="?attr/colorMobileDesignBackgroundStandard"
+        app:layout_constraintTop_toBottomOf="@id/password" />
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <IconValueListItemView-->
+    <!--        android:id="@+id/faq"-->
+    <!--        style="@style/IconValueListItemView.LaunchPoint"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:endIcon="?attr/icon_chevron_right"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/divider1"-->
+    <!--        app:startIcon="?attr/icon_help_circle"-->
+    <!--        app:titleText="FAQ" />-->
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <IconValueListItemView-->
+    <!--        android:id="@+id/helpCenter"-->
+    <!--        style="@style/IconValueListItemView.LaunchPoint"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:endIcon="?attr/icon_chevron_right"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/faq"-->
+    <!--        app:startIcon="?attr/icon_contact_complaint"-->
+    <!--        app:titleText="Help Center" />-->
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_4dp"
+        android:background="?attr/colorMobileDesignBackgroundStandard"
+        app:layout_constraintTop_toBottomOf="@id/helpCenter" />
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <IconValueListItemView-->
+    <!--        android:id="@+id/TandC"-->
+    <!--        style="@style/IconValueListItemView.LaunchPoint"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:endIcon="?attr/icon_chevron_right"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/divider2"-->
+    <!--        app:startIcon="?attr/icon_script"-->
+    <!--        app:titleText="T&amp;C" />-->
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_4dp"
+        android:background="?attr/colorMobileDesignBackgroundStandard"
+        app:layout_constraintTop_toBottomOf="@id/TandC" />
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <IconValueListItemView-->
+    <!--        android:id="@+id/delete_profile"-->
+    <!--        style="@style/IconValueListItemView.LaunchPoint"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:endIcon="?attr/icon_chevron_right"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/divider3"-->
+    <!--        app:startIcon="?attr/icon_clear"-->
+    <!--        app:titleText="Delete profile" />-->
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_4dp"
+        android:background="?attr/colorMobileDesignBackgroundStandard"
+        app:layout_constraintTop_toBottomOf="@id/delete_profile" />
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <IconValueListItemView-->
+    <!--        android:id="@+id/logOut"-->
+    <!--        style="@style/IconValueListItemView.LaunchPoint"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:endIcon="?attr/icon_chevron_right"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/divider4"-->
+    <!--        app:startIcon="?attr/icon_export"-->
+    <!--        app:titleText="Log out" />-->
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1dp"
+        android:background="?attr/colorMobileDesignBackgroundStandard"
+        app:layout_constraintTop_toBottomOf="@id/logOut" />
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <GeneralSpinner-->
+    <!--        android:id="@+id/loading"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:spinner_type="DarkLarge"-->
+    <!--        tools:visibility="visible" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

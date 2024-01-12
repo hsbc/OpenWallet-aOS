@@ -1,0 +1,339 @@
+{
+  "/api/blockchain/nft/list": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "data": [
+        {
+          "imgUrl": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F811%2F1021141I142%2F1410211I142-5.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265889&t=dfc8b43b13c73b3b8ca94722f1ba395c",
+          "name": " Gold key",
+          "edition": "2022 Limited Edition",
+          "ownedBy": "liuzheng",
+          "status": "Redeemed",
+          "date": "2022-09-15"
+        }
+      ]
+    }
+  },
+  "/api/blockchain/nft/token/detail/AE/134": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "data": [
+        {
+          "name": " Gold Card",
+          "edition": "2022 Limited Edition",
+          "ownedBy": "liuzheng",
+          "material": "yellow",
+          "fineness": "18kt",
+          "weight": "26 grams(approx)",
+          "goldItemInfo": "Exclusive for you, by  - Gold means wealth as\\npermanence, and a gift for all time to be passed down.\\nGold is the gift that is not forgotten, but rather becomes\\nthe heritage that lasts forever. Gold is the gift with a\\nmeaning all its own.",
+          "imageList": [
+            "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F811%2F1021141I142%2F1410211I142-5.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265889&t=dfc8b43b13c73b3b8ca94722f1ba395c",
+            "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F811%2F1021141I142%2F1410211I142-5.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265889&t=dfc8b43b13c73b3b8ca94722f1ba395c"
+          ],
+          "status": "Redeemed"
+        }
+      ]
+    }
+  },
+  "/api/delivery/create": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "data": [
+        {
+          "name": " Gold Card",
+          "edition": "2022 Limited Edition",
+          "ownedBy": "liuzheng",
+          "material": "yellow",
+          "fineness": "18kt",
+          "weight": "26 grams(approx)",
+          "goldItemInfo": "Exclusive for you, by  - Gold means wealth as\\npermanence, and a gift for all time to be passed down.\\nGold is the gift that is not forgotten, but rather becomes\\nthe heritage that lasts forever. Gold is the gift with a\\nmeaning all its own.",
+          "imageList": [
+            "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F811%2F1021141I142%2F1410211I142-5.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265889&t=dfc8b43b13c73b3b8ca94722f1ba395c",
+            "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F811%2F1021141I142%2F1410211I142-5.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666265889&t=dfc8b43b13c73b3b8ca94722f1ba395c"
+          ],
+          "status": "redeemed"
+        }
+      ]
+    }
+  },
+  "/api/faq/list": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "data": [
+        {
+          "question": "A1",
+          "category": "A",
+          "answer": "A1",
+          "qaid": 144
+        },
+        {
+          "question": "A2",
+          "category": "A",
+          "answer": "A2",
+          "qaid": 145
+        },
+        {
+          "question": "A3",
+          "category": "A",
+          "answer": "A3",
+          "qaid": 146
+        },
+        {
+          "question": "B1",
+          "category": "B",
+          "answer": "B1",
+          "qaid": 147
+        },
+        {
+          "question": "B2",
+          "category": "B",
+          "answer": "B2",
+          "qaid": 148
+        },
+        {
+          "question": "B3",
+          "category": "B",
+          "answer": "B3",
+          "qaid": 149
+        },
+        {
+          "question": "C1",
+          "category": "C",
+          "answer": "C1",
+          "qaid": 150
+        },
+        {
+          "question": "C2",
+          "category": "C",
+          "answer": "C2",
+          "qaid": 151
+        },
+        {
+          "question": "C3",
+          "category": "C",
+          "answer": "C3",
+          "qaid": 152
+        }
+      ]
+    }
+  },
+  "/api/captcha/send": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "Success"
+    }
+  },
+  "/api/captcha/validate": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "unSuccess",
+      "data": {
+        "username": "hello xie"
+      }
+    }
+  },
+  "/api/customer/register": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "Success"
+    }
+  },
+  "/api/auth/verify-first-factor/change-password": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "Success"
+    }
+  },
+  "/api/auth/password/change": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "Success"
+    }
+  },
+  "/api/auth/logout": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "Success"
+    }
+  },
+  "/api/customer/profile/get": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "Success"
+    }
+  },
+  "/api/auth/password/reset": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "Success"
+    }
+  },
+  "/api/auth/verify-first-factor/login": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "Success"
+    }
+  },
+  "/api/tnc/REGISTRATION/EN": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "Success",
+      "data": {
+        "id": 2,
+        "language": "EN",
+        "region": "SG",
+        "category": "REGISTRATION",
+        "createdTime": "2022-09-28T11:49:59.000+00:00",
+        "updatedTime": "2022-09-28T11:50:05.000+00:00",
+        "content": " Open Registration 2022 Terms and Conditions\n\n1 .This Mid-Autumn Spend and Get Promotion 2022 (\"Promotion\") is valid from 17 June 2022 to 31 July 2022, both dates inclusive (\"Promotional Period\") unless otherwise stated, and is offered by  Bank (Singapore) Limited (\"\" or the \"Bank\") to customers:\na.who hold one or more main  credit cards (except  corporate cards, and  debit cards) issued by  in Singapore (each, a \"Card\") as a credit cardholder; and\nb.whose Card account is in good standing with  over the entire Promotional Period and at the time of fulfillment (as determined by  at its discretion), (each such customer, a \"Cardholder\")\n\n2 . reserves the right to determine at our discretion whether:z\na.Cardholder(s) have met all the requirements of this Promotion; and\nb.Charges made to the Card qualify towards fulfilment of the relevant accumulated minimum Qualifying Spend (as defined below) set for the purposes of this Promotion.\n\n3 .For the purpose of this Promotion:\n\"Qualifying Spend\" shall mean posted retail transactions (including but not limited to monthly charges under the interest free instalment payment plan of any merchant, and in the case of  Spend Instalment, only the total purchase amount will qualify as a Qualifying Spend in the month of purchase), including Local Retail Transactions, Online Transactions and Overseas Transactions, charged to a Registered Card (as defined below) account and/or to the account of the supplemental cardholder of the relevant Registered Cardholder (as defined below) during the Promotional Period BUT shall exclude the Excluded Transactions.\n\n\"Local Retail Transactions\" shall mean posted retail transactions (excluding Online Transactions) which are successfully carried out in Singapore dollars to a Registered Card account and/or to the account of the supplementary cardholder of the relevant Registered Cardholder.\n\n\"Online Transactions\" shall mean all retail transactions successfully charged to a Registered Card account and/or to the account of a supplemental cardholder of a Registered Cardholder made via the internet and processed by the respective merchants/acquirers as an online transaction type through the MasterCard International Incorporated and/or Visa Worldwide networks during the Promotional Period.\n\n\"Overseas Transactions\" shall mean all overseas transactions successfully carried out outside Singapore and charged in foreign currency to a Registered Card account and/or to the account of a supplemental cardholder of a Registered Cardholder during the Promotional Period.\n\n\"Excluded Transactions\" shall mean any of the following (which shall, where applicable, be determined based on the transaction descriptions reflected in 's system and the merchant category codes from Visa / MasterCard):\n\t •Foreign exchange transactions (including but not limited to Forex.com);\n\t •Donations and payments to charitable, social organisations and religious organisations;\n\t •Quasi-cash transactions (including but not limited to transactions relating to money orders, traveler's checks, gaming related transactions, lottery tickets and gambling);\n\t •Payments made to financial institutions, securities brokerages or dealers (including but not limited to the trading of securities, investments or crypto-currencies of any kind);\n\t •Payments on money payments/transfers (including but not limited to Paypal, SKR skrill.com, CardUp, SmoovPay, iPayMy);\n\t •Payments to any professional services provider (including but not limited to GOOGLE Ads, Facebook Ads, Amazon Web Services, MEDIA TRAFFIC AGENCY INC);\n\t •Top-ups, money transfers or purchase of credits of prepaid cards, stored-value cards or e-wallets (including but not limited to Grab Top-Up, EZ-Link, Transitlink, NETS Flashpay and Youtrip);\n\t •Payments in connection with any government institutions and/or services (including but not limited to cort costs, fines"
+      }
+    }
+  },
+  "/api/auth/get-countrycode": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": true,
+      "message": "Success",
+      "data": [
+      ]
+    }
+  },
+  "/api/tnc/REGISTRATION/EN/": {
+    "code": 200,
+    "protocol": "http/1.1",
+    "message": "",
+    "contentType": "application/json;charset=UTF-8",
+    "header": {
+      "header1": "a",
+      "header2": "b"
+    },
+    "body": {
+      "status": false,
+      "message": "Success",
+      "data": {
+        "id": 2,
+        "language": "EN",
+        "region": "SG",
+        "category": "REGISTRATION",
+        "createdTime": "2022-09-28T11:49:59.000+00:00",
+        "updatedTime": "2022-09-28T11:50:05.000+00:00",
+        "content": " Open Registration 2022 Terms and Conditions\n\n1 .This Mid-Autumn Spend and Get Promotion 2022 (\"Promotion\") is valid from 17 June 2022 to 31 July 2022, both dates inclusive (\"Promotional Period\") unless otherwise stated, and is offered by  Bank (Singapore) Limited (\"\" or the \"Bank\") to customers:\na.who hold one or more main  credit cards (except  corporate cards, and  debit cards) issued by  in Singapore (each, a \"Card\") as a credit cardholder; and\nb.whose Card account is in good standing with  over the entire Promotional Period and at the time of fulfillment (as determined by  at its discretion), (each such customer, a \"Cardholder\")\n\n2 . reserves the right to determine at our discretion whether:z\na.Cardholder(s) have met all the requirements of this Promotion; and\nb.Charges made to the Card qualify towards fulfilment of the relevant accumulated minimum Qualifying Spend (as defined below) set for the purposes of this Promotion.\n\n3 .For the purpose of this Promotion:\n\"Qualifying Spend\" shall mean posted retail transactions (including but not limited to monthly charges under the interest free instalment payment plan of any merchant, and in the case of  Spend Instalment, only the total purchase amount will qualify as a Qualifying Spend in the month of purchase), including Local Retail Transactions, Online Transactions and Overseas Transactions, charged to a Registered Card (as defined below) account and/or to the account of the supplemental cardholder of the relevant Registered Cardholder (as defined below) during the Promotional Period BUT shall exclude the Excluded Transactions.\n\n\"Local Retail Transactions\" shall mean posted retail transactions (excluding Online Transactions) which are successfully carried out in Singapore dollars to a Registered Card account and/or to the account of the supplementary cardholder of the relevant Registered Cardholder.\n\n\"Online Transactions\" shall mean all retail transactions successfully charged to a Registered Card account and/or to the account of a supplemental cardholder of a Registered Cardholder made via the internet and processed by the respective merchants/acquirers as an online transaction type through the MasterCard International Incorporated and/or Visa Worldwide networks during the Promotional Period.\n\n\"Overseas Transactions\" shall mean all overseas transactions successfully carried out outside Singapore and charged in foreign currency to a Registered Card account and/or to the account of a supplemental cardholder of a Registered Cardholder during the Promotional Period.\n\n\"Excluded Transactions\" shall mean any of the following (which shall, where applicable, be determined based on the transaction descriptions reflected in 's system and the merchant category codes from Visa / MasterCard):\n\t •Foreign exchange transactions (including but not limited to Forex.com);\n\t •Donations and payments to charitable, social organisations and religious organisations;\n\t •Quasi-cash transactions (including but not limited to transactions relating to money orders, traveler's checks, gaming related transactions, lottery tickets and gambling);\n\t •Payments made to financial institutions, securities brokerages or dealers (including but not limited to the trading of securities, investments or crypto-currencies of any kind);\n\t •Payments on money payments/transfers (including but not limited to Paypal, SKR skrill.com, CardUp, SmoovPay, iPayMy);\n\t •Payments to any professional services provider (including but not limited to GOOGLE Ads, Facebook Ads, Amazon Web Services, MEDIA TRAFFIC AGENCY INC);\n\t •Top-ups, money transfers or purchase of credits of prepaid cards, stored-value cards or e-wallets (including but not limited to Grab Top-Up, EZ-Link, Transitlink, NETS Flashpay and Youtrip);\n\t •Payments in connection with any government institutions and/or services (including but not limited to cort costs, fines"
+      }
+    }
+  }
+}

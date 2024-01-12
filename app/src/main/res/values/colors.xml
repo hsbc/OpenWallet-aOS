@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="colorGray">#333</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dark">#EDEDED</color>
+    <color name="black">#000000</color>
+    <color name="gray">#AAAAAA</color>
+    <color name="gray333">#333333</color>
+    <color name="color_divider">#EDEDED</color>
+    <color name="color_divider_2">#EAEAEA</color>
+    <color name="color_bg_learn_home_list">#F8F1F1</color>
+    <color name="color_bg_learn_home_list_item2">#E1EFF4</color>
+    <color name="color_bg_learn_complete">#6CD1F4</color>
+    <color name="translucent_background">#80000000</color>
+    <color name="color_step_view_selected">#12A5AB</color>
+    <color name="color_step_view_unselected">#B9E5E5</color>
+    <color name="color_alert">#507498</color>
+    <color name="color_image_selected">#99333333</color>
+    <color name="color_text_selected">#CC333333</color>
+    <color name="color_bg_edit_avatar">#80333333</color>
+    <color name="color_border_wallet_list_item">#D7D8D6</color>
+    <color name="color_DB0011">#DB0011</color>
+    <color name="color_D7D8D6">#D8D7D6</color>
+    <color name="color_E02020">#E02020</color>
+</resources>

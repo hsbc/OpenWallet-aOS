@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true">
+
+    <!-- ntf mp4 container -->
+    <com.openwallet.ui.activity.fragment.wallet.detail.views.WalletNftVideoView
+        android:id="@+id/fl_nft_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_258dp" />
+
+    <ImageView
+        android:id="@+id/bannerImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_258dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/icon_wallet_nft_front" />
+
+
+</androidx.cardview.widget.CardView>

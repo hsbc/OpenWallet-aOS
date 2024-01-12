@@ -1,0 +1,123 @@
+variables:
+  APK_OUTPUT_FOLDER: "$CI_PROJECT_DIR/buildOutputs/apk"
+  AAB_OUTPUT_FOLDER: "$CI_PROJECT_DIR/buildOutputs/aab"
+  CICD_SCRIPTS_FOLDER: "$CI_PROJECT_DIR/cicd_scripts"
+  RASP_SCRIPTA_FOLDER: "$CI_PROJECT_DIR/rasp"
+  RASP_SHIELD_WITH_PROD: "$RASP_SCRIPTA_FOLDER/rasp-shield-with-prod.sh"
+  RASP_SHIELD_WITH_UAT_SIGN: "$RASP_SCRIPTA_FOLDER/rasp-shield-with-uat-sign.sh"
+
+before_script:
+  - VERSION_FILE="$HOME/$VERSION_FILE"
+  - ARTIFACTS_FOLDER="${HOME}/${ARTIFACTS_FOLDER}"
+  - echo "ARTIFACTS_FOLDER:$ARTIFACTS_FOLDER \r"
+  - REINFORCE_APK_OUTPUT_FOLDER="$ARTIFACTS_FOLDER/apks"
+  - echo "REINFORCE_APK_OUTPUT_FOLDER:$REINFORCE_APK_OUTPUT_FOLDER \r"
+  - REINFORCE_AAB_OUTPUT_FOLDER="$ARTIFACTS_FOLDER/aabs"
+  - echo "REINFORCE_AAB_OUTPUT_FOLDER:$REINFORCE_AAB_OUTPUT_FOLDER \r"
+  - rm -f local.properties
+  - echo "sdk.dir=$HOME/Library/Android/sdk" >> local.properties
+  - export GRADLE_HOME="$HOME/Documents/installed_software/gradle/gradle-7.4"
+  - export PATH="$PATH:$GRADLE_HOME/bin"
+  - chmod +x $CI_PROJECT_DIR/gradlew
+  - chmod +x $CICD_SCRIPTS_FOLDER/*.sh
+  - chmod +x $RASP_SCRIPTA_FOLDER/*.sh
+  - VERSION_INFO=$(./gradlew -q ":app:getBuildInfo")
+  - echo "VERSION_INFO---->${VERSION_INFO}\r"
+  - VERSION_CODE=$(echo "$VERSION_INFO" |cut -d"-" -f1)
+  - VERSION_NAME=$(echo "$VERSION_INFO" |cut -d"-" -f2)
+  - JACOCO_TASK_NAME=$(echo "$VERSION_INFO" |cut -d"-" -f3)
+  - GIT_TAG_NAME="tags/$VERSION_NAME-$VERSION_CODE"
+
+stages:
+  - build
+  - uploadApks
+
+sonarqube-check:
+  allow_failure: false
+  tags:
+    - test_runner
+  interruptible: true
+  stage: build
+  image: gradle:jre11-slim
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - gradle $JACOCO_TASK_NAME
+    - gradle sonarqube
+  rules:
+    - if: $CI_COMMIT_MESSAGE =~ "/auto_sonarqube/"
+      when: on_success
+    - when: manual
+
+buildBundles:
+  allow_failure: false
+  tags:
+    - test_runner
+  interruptible: true
+  stage: build
+  script:
+    - echo "******** start build bundles ********\r"
+    - if [ ! -d "$ARTIFACTS_FOLDER" ];then mkdir -p "$ARTIFACTS_FOLDER";fi
+    - rm -rf "$AAB_OUTPUT_FOLDER"
+    - rm -rf "$REINFORCE_AAB_OUTPUT_FOLDER"
+    - mkdir -p "$REINFORCE_AAB_OUTPUT_FOLDER"
+    - rm -f "$VERSION_FILE"
+    - echo "$VERSION_CODE" >> "$VERSION_FILE"
+    - $CI_PROJECT_DIR/gradlew clean
+    - $CI_PROJECT_DIR/gradlew bundle"$BUILD_VARIANT"Release
+    - $RASP_SHIELD_WITH_PROD
+    - $RASP_SHIELD_WITH_UAT_SIGN
+    - $CICD_SCRIPTS_FOLDER/cicd_move_artifacts_to_outputs.sh "$AAB_OUTPUT_FOLDER" "aab" "$REINFORCE_AAB_OUTPUT_FOLDER" "$CICD_SCRIPTS_FOLDER"
+  artifacts:
+    expire_in: 2days
+    paths:
+      - $AAB_OUTPUT_FOLDER
+  rules:
+    - if: $CI_COMMIT_MESSAGE =~ "/build_aab/"
+      when: on_success
+    - when: manual
+
+buildApks:
+  allow_failure: false
+  tags:
+    - test_runner
+  interruptible: true
+  stage: build
+  script:
+    - echo "******** start build apks versionName:$VERSION_NAME    newVersionCode:$NEW_VERSION_CODE ********\r"
+    - if [ ! -d "$ARTIFACTS_FOLDER" ];then mkdir -p "$ARTIFACTS_FOLDER";fi
+    - rm -rf "$APK_OUTPUT_FOLDER"
+    - rm -rf "$REINFORCE_APK_OUTPUT_FOLDER"
+    - mkdir -p "$REINFORCE_APK_OUTPUT_FOLDER"
+    - rm -f "$VERSION_FILE"
+    - echo "$VERSION_CODE" >> "$VERSION_FILE"
+    - $CI_PROJECT_DIR/gradlew clean
+    - $CI_PROJECT_DIR/gradlew assemble"$BUILD_VARIANT"Release
+    - $RASP_SHIELD_WITH_PROD
+    - $RASP_SHIELD_WITH_UAT_SIGN
+    - $CICD_SCRIPTS_FOLDER/cicd_move_artifacts_to_outputs.sh "$APK_OUTPUT_FOLDER" "apk" "$REINFORCE_APK_OUTPUT_FOLDER" "$CICD_SCRIPTS_FOLDER"
+  rules:
+    - if: $CI_COMMIT_MESSAGE =~ "/build_apk/"
+      when: on_success
+    - when: manual
+  artifacts:
+    expire_in: 2days
+    paths:
+      - $APK_OUTPUT_FOLDER
+
+uploadApks:
+  allow_failure: false
+  tags:
+    - test_runner
+  interruptible: true
+  stage: uploadApks
+  script:
+    - $CICD_SCRIPTS_FOLDER/cicd_upload_artifacts_to_appcenter.sh "$REINFORCE_APK_OUTPUT_FOLDER" "$VERSION_CODE" "$VERSION_NAME" "apk" "$CICD_SCRIPTS_FOLDER" "$APPCENTER_GROUP"
+  needs:
+    - buildApks
+  retry: 2

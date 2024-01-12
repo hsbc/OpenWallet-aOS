@@ -1,0 +1,331 @@
+<resources>
+    <string name="app_name">OpenWallet</string>
+    <string name="home_title">Good morning</string>
+    <string name="home_banner_title"> Gold X NFT - Gold Gift is ready to be redeemed!</string>
+    <string name="home_card_title">Learn</string>
+    <string name="home_banner_card_title1">What is NFT?</string>
+    <string name="home_banner_card_sub_title1">5 min</string>
+
+    <string name="home_banner_card_title2">What is Web 3.0?</string>
+    <string name="home_banner_card_title3">Why should you be excited about your NFT?</string>
+
+    <string name="welcome_title">Welcome to  Open</string>
+    <string name="welcome_subtitle">Before registering, please keep on hand the email address and mobile phone number connected to your bank account.</string>
+    <string name="register_home_subtitle">Creating your account will take less than 5 minutes!</string>
+    <string name="bottom_name_home">Home</string>
+    <string name="bottom_name_wallet">Wallet</string>
+    <string name="bottom_name_marketplace">Marketplace</string>
+    <string name="bottom_name_learn">Learn</string>
+    <string name="bottom_name_profile">Profile</string>
+
+    <string name="wallet_title"> Open Wallet</string>
+    <string name="wallet_own_by">Eligibility: %s</string>
+    <string name="wallet_detail_product_details">Gold Gift details</string>
+    <string name="redeem_fragment_title">Redeem Gold Gift</string>
+    <string name="wallet_detail_key_owned">Owned by </string>
+    <string name="walled_detail_redeemed_on">Redeemed on : %s</string>
+    <string name="wallet_detail_key_nft_serial_number">NFT serial number</string>
+    <string name="walled_detail_tittle">Limited Edition  Gold Coin  </string>
+    <string name="wallet_detail_status">Status</string>
+    <string name="wallet_redeem_btn_text">Redeem your gift</string>
+    <string name="wallet_detail_product_background">Product background</string>
+    <string name="wallet_detail_product_background_title">What is Gold Gift NFT?</string>
+    <string name="wallet_nft_id_format"> NFT ID: %s</string>
+    <string name="wallet_nft_status">NFT status: %s</string>
+    <string name="wallet_nft_expiration_date_format">Expiration date: %s</string>
+    <string name="wallet_nft_redemption_date_format">Redemption date: %s</string>
+    <string name="wallet_nft_record_desc_expired">The section will be updated after you successfully request to redeem your Gold Gift. By doing so, you will also initiate the creation of the NFT for ! \n\nIf you have any queries or feedback about our NFT X Gold campaign or  Open, please contact your relationship manager, or leave a message in our Help center</string>
+    <string name="wallet_nft_record_desc_redeemed">Your request to redeem your Gold Gift and initiate the creation of an NFT for  is confirmed. You will be contacted soon to arrange delivery of your Gold Gift. \n\nIf you have any questions, please contact your relationship manager. </string>
+    <string name="wallet_detail_product_background_desc">NFTs – or Non-Fungible Tokens – are unique digital assets stored on a blockchain… </string>
+    <string name="wallet_detail_product_services">Products &amp; services</string>
+    <string name="wallet_detail_about_delivery">About delivery</string>
+    <string name="wallet_detail_background_desc">NFTs – or Non-Fungible Tokens – are unique digital assets stored on a blockchain. They are designed to be unique and cannot be exchanged for another equivalent, unlike crypto-assets like Bitcoin or Central Bank Digital Currencies. \n\nThe NFTs can be used to represent distinct goods, such as a land title deed or a particular piece of artwork.  They can be digital proof of ownership or authenticity and can even provide transferability when a physical good/service is not as easily transferable.  \n\nFor this  Open campaign, the NFT does not represent ownership of any good or service and is non-tradable, meaning you will not be able to use or sell it on a crypto exchange. \n\nHowever, you will learn more about NFTs and Web 3.0 and will play a role in ’s creation of an NFT while you redeem your Gold Gift.  \n\n</string>
+
+    <string name="product_detail_key_material">Material</string>
+    <string name="product_detail_key_fineness">Fineness</string>
+    <string name="product_detail_key_weight">Weight</string>
+    <string name="product_detail_info_title">Gold Gift information</string>
+    <string name="product_detail_info_desc">Exclusive for you, by  - Gold means wealth as permanence, and a gift for all time to be passed down. Gold is the gift that is not forgotten, but rather becomes the heritage that lasts forever. Gold is the gift with a meaning all its own.</string>
+
+    <string name="redeem_title">Confirm redemption</string>
+    <string name="redeem_nft_owner">Redeemed By</string>
+    <string name="redeem_phone_number">Mobile phone number</string>
+    <string name="redeem_tips">If you have any questions, please contact your relationship manager. </string>
+    <string name="redeem_terms">I agree to all the terms and conditions</string>
+    <string name="redeem_dialog_title">Cancel Gold X NFT – Gold Gift Redemption? </string>
+    <string name="redeem_dialog_content">You are in the midst of requesting delivery of the Gold Gift.  If you cancel now, you will have to submit it again.\n\n</string>
+    <string name="session_timeout_dialog_title">TimeOut notification</string>
+    <string name="session_timeout_dialog_desc">Your session has expired due to time out</string>
+
+    <string name="view_more">View more</string>
+    <string name="redeem">Redeem</string>
+    <string name="submit">Submit</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="got_it">Got it</string>
+
+    <string name="login">Sign in</string>
+    <string name="learn_home_title">Learn list</string>
+    <string name="learn_home_complete">complete</string>
+    <string name="learn_start_title">Learn detail</string>
+    <string name="learn_start_button_start">Start quiz</string>
+    <string name="learn_answer_button_submit">Submit</string>
+    <string name="learn_answer_button_next">Next</string>
+    <string name="learn_answer_wrong_tips">Your answer is wrong, please try again.</string>
+    <string name="learn_answer_title">Question</string>
+    <string name="learn_answer_complete_title">Congratulations!</string>
+    <string name="learn_answer_complete_message">You have successfully entered the luck draw.</string>
+    <string name="learn_answer_complete_button">Back to Learn</string>
+    <string name="marketplace_coming_soon">Coming soon!</string>
+    <string name="wallet_detail_title">Gold X NFT preview</string>
+    <string name="wallet_signin">Please Sign in / Sign up</string>
+    <string name="wallet_signin_description">Please click the button to sign in or register</string>
+    <string name="wallet_go">Go</string>
+    <string name="enroll_now">Enroll now</string>
+    <string name="start_here">Start here</string>
+    <string name="welcome" formatted="false">Welcome, %1$s</string>
+    <string name="register">Register</string>
+    <string name="username">Username<font color='#FF0000'>*</font></string>
+    <string name="next">Next</string>
+    <string name="password">Password<font color='#FF0000'>*</font></string>
+    <string name="confirm_password">Confirm password<font color='#FF0000'>*</font></string>
+    <string name="password_alert">Password must be 8–20 characters, includes at least three of the four types: upper/lower letters, number or symbols.</string>
+    <string name="email">Email<font color='#FF0000'>*</font></string>
+    <string name="verify_email">Verify email address</string>
+    <string name="method_verify_email">Verify by email</string>
+    <string name="method_verify_phone">Verify by mobile phone number</string>
+    <string name="verification_code">Verification code</string>
+    <string name="profile_title">My Profile</string>
+    <string name="profile_email_edit">Email</string>
+    <string name="profile_password">Password</string>
+    <string name="profile_unlogin_warning">Please Log on / Register</string>
+    <string name="profile_faq">FAQ</string>
+    <string name="profile_edit_profile_title">Edit my profile</string>
+    <string name="profile_edit_profile_labelText">Username</string>
+    <string name="profile_avatar_title">Select Avatar</string>
+    <string name="register_success">Congratulations!</string>
+    <string name="register_fail">One or more of the details you entered does not match the information on our records.</string>
+    <string name="toolbar_title_delete_profile">Delete profile</string>
+
+    <string name="register_success_detail">You have successfully registered.</string>
+    <string name="logon">Log on</string>
+    <string name="login_redirect_to_login">Need an account? <u>Sign Up?</u></string>
+    <string name="change_password_title">Change password</string>
+    <string name="change_password">Verify Identity</string>
+    <string name="change_password_complete_message">You have successfully changed your password.</string>
+    <string name="password_new">New password<font color='#FF0000'>*</font></string>
+    <string name="back_to_my_profile">Back to my Profile</string>
+    <string name="notification_title">Notification</string>
+    <string name="edit_profile_update">Update changes</string>
+    <string name="logout">Log out</string>
+    <string name="edit_avatar_selected">Selected</string>
+    <string name="wallet_detail_background">Background</string>
+    <string name="ad_find_out_more">Find out more</string>
+    <string name="ad_title">To celebrate ’s internationalism theme,  is releasing 1,000 pixelated art NFTs</string>
+    <string name="ad_content">Download the App, to learn about Web3, and enter a draw to win one of the limited edition NFTs</string>
+    <string name="intro_start">Start the quiz</string>
+    <string name="banner_title">Learn more about blockchain and win your unique NFT</string>
+    <string name="award_title">Congratulations</string>
+    <string name="award_content">You\'ve won a very unique  branded NFT.</string>
+    <string name="login_start_title">Please log on or register</string>
+    <string name="login_start_content">Please click the button to log on or register.</string>
+    <string name="login_go">Go</string>
+    <string name="login_logon">Log on</string>
+    <string name="login_register">Register</string>
+    <string name="login_home_title">Good morning</string>
+    <string name="login_home_content">Log on to  Open.</string>
+    <string name="login_title">Log on</string>
+    <string name="login_email">Enter your email</string>
+    <string name="login_email_error">We couldn\'t find your email</string>
+    <string name="login_password">Enter password</string>
+    <string name="login_username_forget">Forgot your username?</string>
+    <string name="login_password_error">Invalid password.</string>
+    <string name="login_password_forget">Forgotten your password?</string>
+    <string name="register_step_title_format">Step %1$s of %2$s: %3$s</string>
+    <string name="register_step1_username">Set up username</string>
+    <string name="register_step1_username_enter">Enter your username</string>
+    <string name="register_step1_username_error">Username already exists.</string>
+    <string name="register_step2_password">Set up password</string>
+    <string name="register_step2_password_enter">Enter password</string>
+    <string name="register_step2_password_info">Password must be 8–20 characters, includes at least three of the four types: upper/lower letters, number or symbols.</string>
+    <string name="register_step2_password_confirm">Confirm password</string>
+    <string name="register_step2_password_not_match">Password confirmation doesn\'t match.</string>
+    <string name="register_step3_email">Verify email address</string>
+    <string name="register_step3_email_">Please register with a  email.</string>
+    <string name="register_step3_email_consent">By providing your work e-mail address, you consent to the collection and use of the same by  HK for the Campaign. Please visit Campaign site for Campaign Terms and App Terms.</string>
+    <string name="register_step3_email_verify">Verify email</string>
+    <string name="register_step3_email_enter">Enter email address</string>
+    <string name="register_step3_verifycode_enter">Verification code</string>
+    <string name="register_step3_verifycode_error">Invalid code.</string>
+    <string name="register_step3_verifycode_hint">Please enter the 6-digit verification code. We have sent it to:</string>
+    <string name="register_step3_verifycode">Verification code</string>
+    <string name="register_step4_phone">Verify mobile phone number</string>
+    <string name="register_step4_phone_enter">Mobile phone number</string>
+    <string name="edit_email_title">Change email</string>
+    <string name="edit_email_enter_email">Enter email</string>
+    <string name="edit_email_invalid_code">Invalid code.</string>
+    <string name="edit_email_step_title_format">Step %1$s of %2$s: %3$s</string>
+    <string name="edit_email_step_title_step1">Verify identity</string>
+    <string name="edit_email_step_title_step2">Verification</string>
+    <string name="edit_email_step1_hint">Please enter the 6-digit verification code. We have sent it to:</string>
+    <string name="edit_email_step1_label_text">Verification code</string>
+    <string name="edit_email_step2_hint">Please enter the email address connected to your bank account.</string>
+    <string name="edit_email_step2_label_text">Enter new email</string>
+    <string name="edit_email_successful_message">Your email address has been successfully updated.</string>
+    <string name="edit_email_successful_button">Back to my Profile</string>
+    <string name="reset_password_step1_title">Reset password step1</string>
+    <string name="reset_password_step2_title">Reset password step2</string>
+    <string name="reset_password_step3_title">Reset password step3</string>
+    <string name="find_username_step1_email">Verify email address</string>
+    <string name="find_username_step2_phone">Verify mobile phone number</string>
+    <string name="change_password_step1_email">Change Password step1</string>
+    <string name="change_password_step2_phone">Change Password step2</string>
+    <string name="reset_password_step1_email">Verify email address</string>
+    <string name="reset_password_step2_phone">Verify mobile phone number</string>
+    <string name="reset_password_step3_password">Reset password</string>
+    <string name="reset_password_title">Reset password</string>
+    <string name="reset_password">Verify Identity</string>
+    <string name="reset_password_logged_in_email_hint">Verify the email address connected to your bank account</string>
+    <string name="reset_password_logged_in_phone_hint">Verify the mobile phone number connected to your bank account</string>
+    <string name="reset_password_email_not_available">The  email has not been registered.</string>
+    <string name="reset_password_complete_message">You have successfully reset password.</string>
+    <string name="reset_password_button">Reset password via email</string>
+    <string name="reset_password_step2_password_label">New password</string>
+    <string name="resend_code">Resend code</string>
+    <string name="sorry">Sorry</string>
+    <string name="try_again">Try again</string>
+    <string name="btn_go_home">Go back to home</string>
+    <string name="common_error_tips">Sorry, something went wrong.</string>
+    <string name="dialog_title">Do you want to continue?</string>
+    <string name="dialog_description">A redo of the register will be needed if you quit the waiting now.</string>
+    <string name="dialog_keep_waiting">Keep waiting</string>
+    <string name="dialog_leave_away">Leave anyway</string>
+    <string name="error_service_unavailable">Sorry, something wrong. Please try again.</string>
+    <string name="morning_greeting">Good Morning</string>
+    <string name="afternoon_greeting">Good Afternoon</string>
+    <string name="evening_greeting">Good Evening</string>
+    <string name="default_greeting">Hello!</string>
+    <string name="intro_welcome">Hello!</string>
+    <string name="intro_title"> <font color='#DB0011'>NFT</font></string>
+    <string name="intro_nft">NFT</string>
+    <string name="intro_sub_title1">Digitise at Scale</string>
+    <string name="intro_sub_title2">Own a piece of ‘internationalism’</string>
+    <string name="intro_sub_title3">How to win the NFT?</string>
+    <string name="intro_content1"> has been developing and deploying some of the industry’s most advanced and innovative technology to make customers’ banking experience easier and more secure.
+        \n\nOne technology that has gained traction recently is the use of Non-Fungible Tokens (NFTs). These are digital assets that allow the recording and assigning of ownership on “public ledgers – often known as the blockchain”.
+        \n\nIn addition to having applications in financial securities and real-world assets such as property, NFTs have gained popularity as a means of trading digital artwork and other forms of intellectual property.    </string>
+    <string name="intro_content2">Over the next two weeks, we hope you will learn more about NFT ownership and experience our beta digital wallet solution called “ Open Staff”, and get a chance to <b><font color='#DB0011'>win one of 1,000 commemorative tokens.</font></b> Our very own  NFTs is specially-designed to reflect our heritage and our Asia-Pacific network.</string>
+    <string name="intro_step1">Step 1:</string>
+    <string name="intro_step2">Step 2:</string>
+    <string name="intro_step3">Step 3:</string>
+    <string name="intro_step4">Step 4:</string>
+    <string name="intro_step1_content">Follow the on-screen instructions to register and log in to the app.</string>
+    <string name="intro_step2_content">Complete all three quizzes in the app to enter the lucky draw.</string>
+    <string name="intro_step3_content">Receive notification from us towards the end of the Campaign.</string>
+    <string name="intro_step4_content">For the lucky winners, you can collect your NFT in app.</string>
+    <string name="intro_terms_and_conditions">Terms and conditions</string>
+    <string name="timeout_dialog_title">Information</string>
+    <string name="dialog_OK">OK</string>
+    <string name="timeout_dialog_description">Your session is timed out. Please log on again.</string>
+    <string name="error_incorrect_answer">Your answer is wrong, please try again.</string>
+    <string name="nft_token_title">NFT 1865</string>
+    <string name="nft_token_description"><b>Piece of Internationalism - Part of Project 1865, September 2022.</b>
+        \n\nYour very own  NFTs is inspired by the Banks Heritage across our Asia-Pacific network.
+        \n\nYour NFT encompasses:
+        \n\n\t1. One of our  lions (either Stephen or Stitt).
+        \n\n\t2. An iconic object associated with one of our Asia-Pacific markets.
+        \n\n\t3. An element represent our Asia Wealth strategy and ambitions.
+        \n\n has been developing and deploying some of the industry’s most advanced and innovative technology to make customers’ banking experience easier and more secure.
+        \n\nThis NFT is non-tradable and non-transferrable and have no present or future value. Please refer to the Campaign Terms and Conditions for more information about the NFT.
+    </string>
+    <string name="cancel">Cancel</string>
+    <string name="switch_user">Switch user</string>
+    <string name="error">Error</string>
+    <string name="sendCode">Send code</string>
+    <string name="continue_text">Continue</string>
+    <string name="goBack">Go back</string>
+    <string name="remember_me">Remember me</string>
+    <string name="verify_phone_number">Verify mobile phone number</string>
+    <string name="login_consent">By logging on, you agree to the all Terms and Conditions.</string>
+    <string name="register_start_step1">Set up username</string>
+    <string name="register_start_step2">Set up password</string>
+    <string name="register_start_step3">Register with your email address</string>
+    <string name="register_start_step4">Register with your mobile phone number</string>
+    <string name="enter_phone_number_hint">Mobile phone number</string>
+    <string name="uae_code">+971</string>
+    <string name="find_username_title">Find my username</string>
+    <string name="find_username_success">You Have successfully found your username.</string>
+    <string name="enter_valid_email_address_hint">Please enter a valid email address</string>
+    <string name="enter_valid_username_hint">Please enter a valid username.</string>
+    <string name="terms_and_conditions_title">Personal Internet Banking Terms and Conditions</string>
+    <string name="terms_and_conditions_section_title1">1. What This Agreement Covers</string>
+    <string name="terms_and_conditions_content1">This Agreement between you and  Bank USA, N.A. (“”) governs the use of Personal Internet Banking services. These services permit enrolled  customers to perform a number of banking functions online through the use of a personal computer or, for some functions, a mobile device on accounts linked to the service, including some accounts with our affiliates, such as  Securities (USA) Inc. (“ Securities”). Unless indicated otherwise by the context, “linked  accounts” or “linked accounts” refers to all of your accounts with  or its affiliates that you have linked to Personal Internet Banking.\n\nWhen you use any of the Personal Internet Banking services described in this Agreement, or authorize others to use them, you agree to the terms and conditions of the entire Agreement. Your use of online banking services may also be affected by the agreements between us for your linked  accounts. You should review those agreements for any applicable fees, for limitations on the number of transactions you can make, and for other restrictions that might impact your use of an account with online banking services. In addition, your use of online banking services is affected by our Website Terms and Conditions, which terms are incorporated here by reference and made a part of this Agreement.</string>
+    <string name="terms_and_conditions_accept">I accept the T&amp;C, and send it to my email.</string>
+    <string name="register_username_info">The username must be 6–30 characters long and can be any combination of lower and/or upper case letters, numbers, or underscore(_).</string>
+    <string name="register_step3_email_hint">Please enter the email address connected to your bank account.</string>
+    <string name="register_step4_phone_hint">Please enter the mobile phone number connected to your bank account.</string>
+    <string name="register_phone_select_country_code_title">Select country/location/territory code</string>
+    <string name="register_name_bottomsheet_hint">Create a username</string>
+    <string name="register_password_bottomsheet_hint">Password rule</string>
+    <string name="login_methods_title">Select verification method</string>
+    <string name="sms_email_hint">Please enter the code that we have emailed to</string>
+    <string name="sms_phone_hint">Please enter the code that we have sent to</string>
+    <string name="change_password_step_title_step1">Enter current password</string>
+    <string name="change_password_step_title_step2">Select verification method</string>
+    <string name="change_password_step_title_step3">Enter new password</string>
+    <string name="swipe_refresh_hint">Please swipe down to refresh</string>
+    <string name="change_password_step_old_password">Enter current password</string>
+    <string name="change_password_step_method">Select verification method</string>
+    <string name="change_password_step_new_password">Enter new password</string>
+    <string name="new_password">New password</string>
+
+
+    <string name="change_password_step1">Enter current password</string>
+
+    <string name="delete_profile_dialog_title">Confirm deleting your profile?</string>
+    <string name="delete_profile_dialog_content">If so, you will no longer have access to this  Open profile nor be allowed to register a new profile with your current registered profile information.\n\n</string>
+    <string name="delete_profile_success_page_title">Thank you for joining  on this Gold X NFT journey</string>
+    <string name="delete_profile_success_page_body">Your profile has been deleted </string>
+
+    <string-array name="register_steps">
+        <item>Username</item>
+        <item>Password</item>
+        <item>Verification</item>
+    </string-array>
+
+    <string-array name="avatars">
+        <item>avatar_0</item>
+        <item>avatar_1</item>
+        <item>avatar_2</item>
+        <item>avatar_3</item>
+        <item>avatar_4</item>
+        <item>avatar_5</item>
+        <item>avatar_6</item>
+        <item>avatar_7</item>
+        <item>avatar_8</item>
+        <item>avatar_9</item>
+        <item>avatar_10</item>
+        <item>avatar_11</item>
+        <item>avatar_12</item>
+        <item>avatar_13</item>
+        <item>avatar_14</item>
+        <item>avatar_15</item>
+        <item>avatar_16</item>
+        <item>avatar_17</item>
+        <item>avatar_18</item>
+        <item>avatar_19</item>
+        <item>avatar_20</item>
+        <item>avatar_21</item>
+        <item>avatar_22</item>
+        <item>avatar_23</item>
+        <item>avatar_24</item>
+        <item>avatar_25</item>
+        <item>avatar_26</item>
+        <item>avatar_27</item>
+        <item>avatar_28</item>
+        <item>avatar_29</item>
+        <item>avatar_30</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

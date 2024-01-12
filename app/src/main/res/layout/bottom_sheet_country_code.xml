@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContentView"
+    android:background="@drawable/top_corner_white_bg_shape"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        style="@style/TextAppearance.BodyEmphasized"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/mobile_design_space_4dp"
+        android:paddingStart="@dimen/mobile_design_space_16dp"
+        android:paddingTop="@dimen/mobile_design_space_16dp"
+        android:paddingEnd="@dimen/mobile_design_space_16dp"
+        app:layout_constraintEnd_toStartOf="@+id/bottomSheetCloseButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/register_phone_select_country_code_title" />
+
+    <ImageView
+        android:id="@+id/bottomSheetCloseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="@string/close_button_description"
+        android:focusable="true"
+        android:gravity="end"
+        android:paddingStart="@dimen/mobile_design_space_16dp"
+        android:paddingTop="@dimen/mobile_design_space_16dp"
+        android:paddingEnd="@dimen/mobile_design_space_16dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/icon_close"
+        tools:contentDescription="@string/close_button_description"
+        tools:visibility="visible" />
+
+    <!--    **** Replace with your own UI component ****"-->
+    <!--    <SearchView-->
+    <!--        android:id="@+id/sv_countryCode"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/titleTextView"/>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/country_code_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="@dimen/dimen_15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sv_countryCode"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/stateView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <!--    **** Replace with your own UI component ****"-->
+        <!--        <GeneralSpinner-->
+        <!--            android:id="@+id/loading"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            app:spinner_type="DarkLarge"-->
+        <!--            android:visibility="gone"-->
+        <!--            tools:visibility="visible"/>-->
+
+        <include
+            android:id="@+id/errorView"
+            layout="@layout/loading_layout_error"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

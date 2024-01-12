@@ -1,0 +1,171 @@
+apply plugin: 'jacoco'
+apply plugin: "org.sonarqube"
+
+/**
+ * The correct path of the report is $rootProjectDir/app/build/reports/jacoco/index.html
+ * to run this task use: ./gradlew clean jacocoTestReport
+ */
+def mainSrc = "${project.projectDir}/src/main/java"
+
+
+def fileFilter = [
+        '**/*$ViewInjector*.*',
+        '**/Manifest*.*',
+        'android/**/*.*',
+        '**/*Contract.*',
+        '**/*Activity.*',
+        '**/*Fragment.*',
+        '**/*Adapter.*',
+        '**/*Test*.*',
+        '**/AutoValue_*.*',
+        '**/*JavascriptBridge.class',
+        '**/R.class',
+        '**/R$*.class',
+        '**/Manifest*.*',
+        'android/**/*.*',
+        '**/BuildConfig.*',
+        '**/*$ViewBinder*.*',
+        '**/*$ViewInjector*.*',
+        '**/Lambda$*.class',
+        '**/Lambda.class',
+        '**/*Lambda.class',
+        '**/*Lambda*.class',
+        '**/*$InjectAdapter.class',
+        '**/*$ModuleAdapter.class',
+        '**/*$ViewInjector*.class',
+        '**/*_MembersInjector.class', //Dagger2 generated code
+        '*/*_MembersInjector*.*', //Dagger2 generated code
+        '**/*_*Factory*.*', //Dagger2 generated code
+        '*/*Component*.*', //Dagger2 generated code
+        '**/*Module*.*', //Dagger2 generated code
+        '**/databinding/*',
+        '**/binder/*',
+        '**/base/*',
+        '**/*Test*.*', '**/AutoValue_*.*', '**/*JavascriptBridge.class', '**/R.class', '**/R$*.class', '**/Manifest*.*', 'android/**/*.*',
+        '**/BuildConfig.*', '**/*$ViewBinder*.*', '**/*$ViewInjector*.*', '**/*Lambda*.*', '**/*$InjectAdapter.class', '**/*$ModuleAdapter.class',
+        '**/*$ViewInjector*.class', '**/FakeDataProvider.class', '**/repository/*FakeDataProvider.*', '**/repository/BaseFakeRepository.*',
+        '**/repository/CompositeRepository.*', '**/common/extension/Accessibility.*', '**/common/extension/Date.*', '**/service/ManagePaymentsApi.*',
+        '**/databinding/*',
+        //Glide
+        '**/glide/*',
+        //viewbinder
+        '**/util/viewbinder/*',
+        '**/*Binder.*',
+        //naviation
+        '**/util/navigation/*',
+        //network mock
+        '**/network/mock/*',
+        //service interface
+        '**/*_MembersInjector.class',
+        //Dagger2 generated code
+        '**/*_MembersInjector.*',
+        //Dagger2 generated code
+        '**/*_*Factory*.*',
+        //Dagger2 generated code
+        '*/*Component*.*',
+        '*/*_Provide*Component.*',
+        '*/*DaggeropenwalletComponent.*',
+        //Dagger2 generated code
+        '**/*Module*.*',
+        //UI,Navigation Extension
+        '**/com/openwallet/ext/**/*',
+        '**/CustomViewExtKt.*',
+        //UI
+        '**/com/openwallet/view/*',
+        '**/com/openwallet/di/*',
+        '**/com/openwallet/ext/*',
+        '**/com/openwallet/base/*',
+        '**/com/openwallet/ui/activity/fragment/**/*Fragment*.*',
+        '**/com/openwallet/ui/activity/**/*Activity*.*',
+        '**/com/openwallet/ui/activity/fragment/**/*Adapter*.*',
+        '**/*ViewHolder*',
+        //utils
+        '**/com/openwallet/util/**/*',
+        //player
+        '**/com/openwallet/playerframe/**/*',
+        '**/com/openwallet/ui/activity/fragment/wallet/detail/views/*',
+        //app
+        '**/com/openwallet/app/**/*',
+        '**/manager/*'
+]
+
+android.applicationVariants.all { variant ->
+    def jacocoTaskName = "${variant.name}JacocoTestReport"
+    def jacocoTask = task(jacocoTaskName, dependsOn: ["test${variant.name.capitalize()}UnitTest"], type: JacocoReport) {
+
+        group = "Reporting"
+
+        reports {
+            xml.enabled = true
+            html.enabled = true
+        }
+
+        def javaDebugTree = fileTree(dir: "${buildDir}/intermediates/javac/${variant.name}/classes", excludes: fileFilter)
+        def kotlinDebugTree = fileTree(dir: "${buildDir}/tmp/kotlin-classes/${variant.name}", excludes: fileFilter)
+
+
+        getSourceDirectories().setFrom(files([mainSrc]))
+
+        getClassDirectories().setFrom(files([javaDebugTree, kotlinDebugTree]))
+
+        getExecutionData().setFrom(fileTree(dir: "$buildDir", includes: [
+                "jacoco/test${variant.name.capitalize()}UnitTest.exec", //we use "debug" build type for test coverage (can be other)
+                "outputs/code-coverage/debugAndroidTest/connected/*coverage.ec"
+        ]))
+
+    }
+    def buildInfoTaskName = "getBuildInfo"
+    if (jacocoTaskName.contains("Debug") && tasks.findByName(buildInfoTaskName) == null) {
+        task(buildInfoTaskName) {
+            println "${generateVersionCode()}-${android.defaultConfig.versionName}-$jacocoTaskName"
+        }
+        sonarqube {
+            properties {
+                property "sonar.qualitygate.wait", true
+                property "sonar.sources", "src/main"
+                property "sonar.tests", "src/test"
+                property "sonar.coverage.jacoco.xmlReportPaths", jacocoTask.reports.xml.destination
+                property "sonar.exclusions",fileFilter
+            }
+        }
+    }
+}
+
+
+//task jacocoTestCoverageVerification(type: JacocoCoverageVerification, dependsOn: 'jacocoTestReport') {
+//
+//
+//    getSourceDirectories().setFrom(files([mainSrc]))
+//
+//    getClassDirectories().setFrom(files([javaDebugTree, kotlinDebugTree]).filter({ file -> !file.name.contains('Fragment') }))
+//
+//    getExecutionData().setFrom(fileTree(dir: "$buildDir", includes: [
+//            "jacoco/testDebugUnitTest.exec", //we use "debug" build type for test coverage (can be other)
+//            "outputs/code-coverage/debugAndroidTest/connected/*coverage.ec"
+//    ]))
+//
+//    violationRules {
+//
+//        failOnViolation = true
+//        rule {
+//            limit {
+//                counter = 'LINE'
+//                value = 'COVEREDRATIO'
+//                minimum = 1.0
+//            }
+//        }
+//
+//        rule {
+//            element = 'CLASS'
+//            limit {
+//                counter = 'LINE'
+//                value = 'COVEREDRATIO'
+//                minimum = 0.8
+//            }
+//        }
+//    }
+//}
+
+
+
+

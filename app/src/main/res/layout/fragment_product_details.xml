@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <com.openwallet.view.CustomToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_14dp"
+        android:layout_marginEnd="@dimen/dimen_14dp"
+        android:background="@drawable/shape_bg_shadow"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgGift"
+                android:layout_width="@dimen/dimen_64dp"
+                android:layout_height="@dimen/dimen_64dp"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_marginTop="@dimen/dimen_14dp"
+                android:layout_marginBottom="@dimen/dimen_14dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_gold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDetailTitle"
+                style="@style/TextAppearance.listItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_18dp"
+                android:textSize="@dimen/dimen_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgGift"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/walled_detail_tittle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:background="?attr/colorMobileDesignBackgroundStandard" />
+
+        <!--    **** Replace with your own UI component ****"-->
+        <!--        <KeyValueTextView-->
+        <!--            android:id="@+id/tvMaterial"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/dimen_8dp"-->
+
+
+        <!--    **** Replace with your own UI component ****"-->
+        <!--        <KeyValueTextView-->
+        <!--            android:id="@+id/tvFineness"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/dimen_8dp">-->
+
+        <!--        <KeyValueTextView-->
+        <!--            android:id="@+id/tvWeight"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/dimen_8dp">-->
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:background="?attr/colorMobileDesignBackgroundStandard" />
+
+        <TextView
+            style="@style/TextAppearance.listItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:text="@string/product_detail_info_title"
+            android:textSize="@dimen/dimen_14sp"
+            app:layout_constraintStart_toStartOf="@id/tvDetailTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDetailTitle" />
+
+
+        <TextView
+            android:id="@+id/tvExtraInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_marginBottom="@dimen/dimen_30dp"
+            android:lineSpacingMultiplier="1.5"
+            android:textSize="@dimen/dimen_14sp"
+            app:layout_constraintStart_toStartOf="@id/tvDetailTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvDetailTitle"
+            tools:text="@string/product_detail_info_desc" />
+
+
+    </LinearLayout>
+</LinearLayout>
